@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Menu: View {
     var body: some View {
-        Text("hello")
+        Text("g")
         
     }
 }
