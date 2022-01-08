@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct Random_Number_Gen: View {
-    @State private var minTextField = "1"
-    @State private var maxTextField = "100"
+    @State private var minTextField: Int? = 1
+    @State private var maxTextField: Int? = 100
     
     @State private var randomNum = 1
     
@@ -17,61 +17,88 @@ struct Random_Number_Gen: View {
     @State private var minTextFieldIsEmpty = false
     @State private var maxTextFieldIsEmpty = false
     
+    @FocusState private var amountIsFocused: Bool
+    
     var body: some View {
-        VStack {
-            Spacer()
-            Text("\(randomNum)")
-                .frame(width: 200, height: 200)
-                .font(.largeTitle)
-            Spacer()
-                HStack {
-                    Text("Min")
-                    TextField("Minimum number", text: $minTextField)
-                    Text("Max")
-                    TextField("Maximum number", text: $maxTextField)
-                }
-            Button("Generate") {
-                let userMinNum = Int(minTextField)
-                let userMaxNum = Int(maxTextField)
+        NavigationView {
+            VStack {
+                Spacer()
+                Spacer()
+                Text("\(randomNum)")
+                    .font(.largeTitle)
+                Spacer()
+                Spacer()
                 
-                guard let userMinNum = userMinNum else {
-                    minTextFieldIsEmpty.toggle()
-                    return
+                VStack {
+                    HStack(alignment: .center) {
+                        Spacer()
+                        Text("Min")
+                        TextField("Minimum number", value: $minTextField, format: .number)
+                            .keyboardType(.numberPad)
+                            .focused($amountIsFocused)
+                    }
+                    HStack(alignment: .center) {
+                        Spacer()
+                        Text("Max")
+                        TextField("Maximum number", value: $maxTextField, format: .number)
+                            .keyboardType(.numberPad)
+                            .focused($amountIsFocused)
+                    }
                 }
+                .background(.ultraThinMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
                 
-                guard let userMaxNum = userMaxNum else {
-                    maxTextFieldIsEmpty.toggle()
-                    return
+                Button("Generate") {
+                    guard let minTextField = minTextField else {
+                        minTextFieldIsEmpty.toggle()
+                        return
+                    }
+                    
+                    guard let maxTextField = maxTextField else {
+                        maxTextFieldIsEmpty.toggle()
+                        return
+                    }
+                    
+                    if minTextField > maxTextField {
+                        minMoreThanMax.toggle()
+                    } else {
+                        randomNum = Int.random(in: minTextField...maxTextField)
+                    }
                 }
-                
-                if userMinNum > userMaxNum {
-                    minMoreThanMax.toggle()
-                } else {
-                    randomNum = Int.random(in: userMinNum...userMaxNum)
+                .frame(width: 300, height: 40)
+                .foregroundColor(.mint)
+                .background(.black)
+                Spacer()
+            }
+            .alert("The minimum must be lower than the maximum", isPresented: $minMoreThanMax) {
+                Button("Ok", role: .cancel) { }
+            }
+            .alert("You must have a minimum", isPresented: $minTextFieldIsEmpty) {
+                Button("Ok", role: .cancel) { }
+            }
+            .alert("You must have a maximum", isPresented: $maxTextFieldIsEmpty) {
+                Button("Ok", role: .cancel) { }
+            }
+            .background(AngularGradient(gradient: Gradient(colors: [ .blue, .mint, .blue]),
+                                        center: .center))
+            .ignoresSafeArea()
+            .navigationTitle("Random Number")
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    
+                    Button("Done") {
+                        amountIsFocused = false
+                    }
                 }
             }
-            .frame(width: 300, height: 40)
-            .foregroundColor(.mint)
-            .background(.black)
-            Spacer()
         }
-        .alert("The minimum must be lower than the maximum", isPresented: $minMoreThanMax) {
-            Button("Ok", role: .cancel) { }
-        }
-        .alert("You must have a minimum", isPresented: $minTextFieldIsEmpty) {
-            Button("Ok", role: .cancel) { }
-        }
-        .alert("You must have a maximum", isPresented: $maxTextFieldIsEmpty) {
-            Button("Ok", role: .cancel) { }
-        }
-        .background()
-        .ignoresSafeArea()
     }
 }
 
+
 struct Random_Number_Gen_Previews: PreviewProvider {
     static var previews: some View {
-        Random_Number_Gen()
         Group {
             Random_Number_Gen()
         }
