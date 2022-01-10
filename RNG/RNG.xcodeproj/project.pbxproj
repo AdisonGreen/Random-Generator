@@ -13,6 +13,7 @@
 		8E6F51502784C033000E8BED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E6F514F2784C033000E8BED /* Preview Assets.xcassets */; };
 		8E6F51592784C0C3000E8BED /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6F51582784C0C3000E8BED /* Menu.swift */; };
 		B3D135BA2788891600C6264D /* Random Number Gen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D135B92788891600C6264D /* Random Number Gen.swift */; };
+		C957EA632788969600676339 /* DiceRoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957EA622788969600676339 /* DiceRoller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		8E6F514F2784C033000E8BED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8E6F51582784C0C3000E8BED /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		B3D135B92788891600C6264D /* Random Number Gen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Random Number Gen.swift"; sourceTree = "<group>"; };
+		C957EA622788969600676339 /* DiceRoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRoller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				8E6F514A2784C031000E8BED /* ContentView.swift */,
 				8E6F51582784C0C3000E8BED /* Menu.swift */,
 				B3D135B92788891600C6264D /* Random Number Gen.swift */,
+				C957EA622788969600676339 /* DiceRoller.swift */,
 				8E6F514C2784C033000E8BED /* Assets.xcassets */,
 				8E6F514E2784C033000E8BED /* Preview Content */,
 			);
@@ -147,6 +150,7 @@
 				8E6F51592784C0C3000E8BED /* Menu.swift in Sources */,
 				B3D135BA2788891600C6264D /* Random Number Gen.swift in Sources */,
 				8E6F51492784C031000E8BED /* RNGApp.swift in Sources */,
+				C957EA632788969600676339 /* DiceRoller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
