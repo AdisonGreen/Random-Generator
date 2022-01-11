@@ -14,14 +14,15 @@ struct Card_Picker: View {
     var body: some View {
         NavigationView {
             VStack {
-                startingImage
-                    .resizable()
-                    .scaledToFit()
-                    .position(x: 200, y: 200)
+                ZStack {
+                    startingImage
+                        .resizable()
+                        .scaledToFit()
+                        .position(x: 200, y: 200)
+                }
                 
                 Button(action: {
                     let randomInt = Int.random(in: 1...52)
-                    print(randomInt)
                     //MARK: Hearts
                     if randomInt == 1 {
                         startingImage = Image("ace_of_hearts")
@@ -49,7 +50,7 @@ struct Card_Picker: View {
                         startingImage = Image("queen_of_hearts2")
                     } else if randomInt == 13 {
                         startingImage = Image("king_of_hearts2")
-                    //MARK: Diamonds
+                        //MARK: Diamonds
                     } else if randomInt == 14 {
                         startingImage = Image("ace_of_diamonds")
                     } else if randomInt == 15 {
@@ -77,7 +78,7 @@ struct Card_Picker: View {
                     } else if randomInt == 26 {
                         startingImage = Image("king_of_diamonds2")
                     } else if randomInt == 27 {
-                    //MARK: Spades
+                        //MARK: Spades
                         startingImage = Image("ace_of_spades2")
                     } else if randomInt == 28 {
                         startingImage = Image("2_of_spades")
@@ -104,7 +105,7 @@ struct Card_Picker: View {
                     } else if randomInt == 39 {
                         startingImage = Image("king_of_spades2")
                     } else if randomInt == 40 {
-                    //MARK: Clubs
+                        //MARK: Clubs
                         startingImage = Image("ace_of_clubs")
                     } else if randomInt == 41 {
                         startingImage = Image("2_of_clubs")
@@ -130,7 +131,7 @@ struct Card_Picker: View {
                         startingImage = Image("queen_of_clubs2")
                     } else if randomInt == 52 {
                         startingImage = Image("king_of_clubs2")
-                    //MARK: Jokers
+                        //MARK: Jokers
                     } else if randomInt == 53 {
                         startingImage = Image("black_joker")
                     } else if randomInt == 54 {
@@ -142,7 +143,6 @@ struct Card_Picker: View {
                 }
                 .position(x: 200, y: 220)
             }
-
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -152,8 +152,11 @@ struct Card_Picker: View {
                 }
             }
         }
+        //
     }
+    //
 }
+
 struct Card_Picker_Previews: PreviewProvider {
     static var previews: some View {
         Card_Picker()
