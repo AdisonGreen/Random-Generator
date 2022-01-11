@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct ListTabBar: View {
-    @State private var userList = ["Colors", "Food"]
+    @State private var userList = [String]()
     
     var body: some View {
         List {
-            ForEach(0..<userList.count) { userList in
-                Text("\(userList)")
-            }
+            
         }
     }
 }
