@@ -10,6 +10,7 @@ import SwiftUI
 struct EditList: View {
     @State private var userList2 = [UserLists]()
     @State private var userList = UserLists(listName: "Colors", listItems: ["Blue", "Red", "Yellow", "Orange", "Pink", "Green", "Black", "White", "Purple", "Brown", "Gray"])
+    @State private var userInput = ""
     
     var body: some View {
         NavigationView {
@@ -19,8 +20,9 @@ struct EditList: View {
                 }
                 
                 Section(header: Text("List Items")) {
-                    ForEach(userList.listItems, id: \.self) { oneItem in
-                        Text(oneItem)
+                    ForEach($userList.listItems, id: \.self) { $oneItem in
+                        TextField("", text: $oneItem)
+                        
                     }
                 }
                 
@@ -35,6 +37,15 @@ struct EditList: View {
                 }
             }
             .navigationTitle("Edit Lists")
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Spacer()
+                    
+                    Button("Save") {
+                        
+                    }
+                }
+            }
         }
     }
 }
