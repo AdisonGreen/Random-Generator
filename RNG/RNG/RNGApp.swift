@@ -13,5 +13,5 @@ struct RNGApp: App {
         WindowGroup {
             ContentView()
         }
-    }
+    } 
 }
