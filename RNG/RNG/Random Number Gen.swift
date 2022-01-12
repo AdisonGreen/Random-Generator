@@ -99,7 +99,7 @@ struct Random_Number_Gen: View {
 
 struct Random_Number_Gen_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
+        ZStack {
             Random_Number_Gen()
         }
     }
