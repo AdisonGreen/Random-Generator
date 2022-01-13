@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct Menu: View {
+    @State private var action: Int? = 0
+    
     var body: some View {
         TabView {
             NavigationView {
                 ScrollView {
                     VStack {
                         HStack {
+                            NavigationLink(destination: Random_Number_Gen(), tag: 1, selection: $action) {
                             // RANDOM NUMBER GENERATOR BUTTON
                             Button {
                                 print("random number generator")
@@ -68,6 +71,9 @@ struct Menu: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .padding(5)
+                                    .onTapGesture {
+                                       self.action = 1
+                                     }
                             }
                         }
                         HStack {
