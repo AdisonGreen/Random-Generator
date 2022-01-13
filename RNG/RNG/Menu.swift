@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct Menu: View {
+    @State private var action: Int? = 0
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack {
                     HStack {
                         // RANDOM NUMBER GENERATOR BUTTON
+                        NavigationLink(destination: Random_Number_Gen(), tag: 1, selection: $action) {
+                        }
                         Button {
                             print("yessss")
                         } label: {
@@ -21,6 +25,9 @@ struct Menu: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .padding(5)
+                                .onTapGesture {
+                                    self.action = 1
+                                }
                         }
                         // DICE ROLLER GENERATOR
                         Button {
