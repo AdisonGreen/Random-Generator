@@ -43,6 +43,7 @@ struct Menu: View {
                             }
                         }
                         HStack {
+                            //Spinner
                             Button {
                                 print("Wheel spinner")
                             } label: {
@@ -51,10 +52,11 @@ struct Menu: View {
                                     .aspectRatio(contentMode: .fit)
                                     .padding(5)
                             }
+                            //Magic 8Ball
                             Button {
                                 print("yessss")
                             } label: {
-                                Image("BlankRounded")
+                                Image("8BallRounded")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .padding(5)
