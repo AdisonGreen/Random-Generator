@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserLists {
+struct UserLists: Hashable {
     var listName: String
     var listItems: [String]
 }

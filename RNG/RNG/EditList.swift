@@ -39,8 +39,6 @@ struct EditList: View {
             .navigationTitle("Edit Lists")
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Spacer()
-                    
                     Button("Save") {
                         
                     }
