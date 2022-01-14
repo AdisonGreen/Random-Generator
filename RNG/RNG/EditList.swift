@@ -20,8 +20,8 @@ struct EditList: View {
                 }
                 
                 Section(header: Text("List Items")) {
-                    ForEach($userList.listItems, id: \.self) { $oneItem in
-                        TextField("", text: $oneItem)
+                    ForEach(0..<userList.listItems.count, id: \.self) { oneItem in
+                        TextField("", text: $userList.listItems[oneItem])
                         
                     }
                 }
