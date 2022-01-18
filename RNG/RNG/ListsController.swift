@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct ListsController {
     static private let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -13,9 +14,9 @@ struct ListsController {
 
     static let shared = ListsController()
 
-    var lists: [UserLists] = [] {
+    @ObservedObject var userLists: UserLists = UserLists() {
         didSet {
-            saveToFile(list: lists)
+            saveToFile(list: userLists.lists)
         }
     }
 
@@ -23,17 +24,17 @@ struct ListsController {
         loadFromFile()
     }
 
-    mutating func save(list: UserLists) {
-        if let index = lists.firstIndex(where: { existingList in
+    mutating func save(list: UserList) {
+        if let index = userLists.lists.firstIndex(where: { existingList in
             existingList.id == list.id
         }){
-            lists[index] = list
+            userLists.lists[index] = list
         } else {
-            self.lists.append(list)
+            self.userLists.lists.append(list)
         }
     }
 
-    private func saveToFile(list: [UserLists]) {
+    private func saveToFile(list: [UserList]) {
         let propertyListEncoder = PropertyListEncoder()
         let encodedLists = try? propertyListEncoder.encode(list)
         try? encodedLists?.write(to: archiveURL, options: .noFileProtection)
@@ -42,14 +43,14 @@ struct ListsController {
     private mutating func loadFromFile() {
         let propertyListDecoder = PropertyListDecoder()
         if let retrievedListsData = try? Data(contentsOf: archiveURL),
-           let decodedLists = try? propertyListDecoder.decode(Array<UserLists>.self, from: retrievedListsData) {
-            lists = decodedLists
+           let decodedLists = try? propertyListDecoder.decode(Array<UserList>.self, from: retrievedListsData) {
+            userLists.lists = decodedLists
         } else {
-            lists = sampleLists()
+            userLists.lists = sampleLists()
         }
     }
 
-    private func sampleLists() -> [UserLists] {
-        return [UserLists(listName: "Colors", listItems: ["Blue", "Red", "Yellow", "Orange", "Pink", "Green", "Black", "White", "Purple", "Brown", "Gray"]), UserLists(listName: "Food", listItems: ["Hamburger", "Pizza"])]
+    private func sampleLists() -> [UserList] {
+        return [UserList(listName: "Colors", listItems: ["Blue", "Red", "Yellow", "Orange", "Pink", "Green", "Black", "White", "Purple", "Brown", "Gray"]), UserList(listName: "Food", listItems: ["Hamburger", "Pizza"])]
     }
 }

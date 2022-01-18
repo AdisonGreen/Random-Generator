@@ -9,15 +9,14 @@ import SwiftUI
 
 struct Lists: View {
     
-    var lists: [UserLists] {
-        ListsController.shared.lists
-    }
+    @StateObject var userLists: UserLists = ListsController.shared.userLists
+    
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(lists, id: \.self) { item in
-                    NavigationLink(destination: EditList(listChosen: item)) {
+                ForEach(userLists.lists, id: \.id) { item in
+                    NavigationLink(destination: EditList(listChosen: item, userLists: userLists)) {
                         Text(item.listName)
                     }
                 }
@@ -25,7 +24,9 @@ struct Lists: View {
             .navigationTitle("Lists")
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    
+                    NavigationLink(destination: EditList(listChosen: UserList(listName: "", listItems: ["", ""]), userLists: userLists)) {
+                        Image(systemName: "plus")
+                    }
                 }
             }
         }

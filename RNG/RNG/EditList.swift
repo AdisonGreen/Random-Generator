@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct EditList: View {
-    @State var listChosen: UserLists
+    @Environment(\.presentationMode) var presentationMode
+    @StateObject var listChosen: UserList
+    @StateObject var userLists: UserLists
     
     var body: some View {
         NavigationView {
@@ -18,8 +20,8 @@ struct EditList: View {
                 }
                 
                 Section(header: Text("List Items")) {
-                    ForEach(0..<listChosen.listItems.count, id: \.self) { item in
-                        TextField("", text: $listChosen.listItems[item])
+                    ForEach($listChosen.listItems, id: \.self) { item in
+                        TextField("One item from you list", text: item)
                         
                     }
                 }
@@ -37,8 +39,9 @@ struct EditList: View {
             .navigationTitle("Edit Lists")
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Button("Save") {
-                        
+                    Button("Done") {
+                        userLists.objectWillChange.send()
+                        presentationMode.wrappedValue.dismiss()
                     }
                 }
             }
@@ -46,8 +49,8 @@ struct EditList: View {
     }
 }
 
-struct EditList_Previews: PreviewProvider {
-    static var previews: some View {
-        EditList(listChosen: UserLists(listName: "Some dude", listItems: ["What", "is", "this", "for"]))
-    }
-}
+//struct EditList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EditList(listChosen: UserList(listName: "Some dude", listItems: ["What", "is", "this", "for"]))
+//    }
+//}

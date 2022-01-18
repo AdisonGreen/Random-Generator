@@ -13,7 +13,7 @@
 		8E6F51502784C033000E8BED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E6F514F2784C033000E8BED /* Preview Assets.xcassets */; };
 		8E6F51592784C0C3000E8BED /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6F51582784C0C3000E8BED /* Menu.swift */; };
 		B367391B278CC7C3003FB3E9 /* EditList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367391A278CC7C3003FB3E9 /* EditList.swift */; };
-		B367391D278DDD29003FB3E9 /* UserLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367391C278DDD29003FB3E9 /* UserLists.swift */; };
+		B367391D278DDD29003FB3E9 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367391C278DDD29003FB3E9 /* UserList.swift */; };
 		B367392027906EBC003FB3E9 /* Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367391F27906EBC003FB3E9 /* Lists.swift */; };
 		B36739222791D64C003FB3E9 /* ListsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36739212791D64C003FB3E9 /* ListsController.swift */; };
 		B3D135BA2788891600C6264D /* Random Number Gen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D135B92788891600C6264D /* Random Number Gen.swift */; };
@@ -29,7 +29,7 @@
 		8E6F514F2784C033000E8BED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8E6F51582784C0C3000E8BED /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		B367391A278CC7C3003FB3E9 /* EditList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditList.swift; sourceTree = "<group>"; };
-		B367391C278DDD29003FB3E9 /* UserLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLists.swift; sourceTree = "<group>"; };
+		B367391C278DDD29003FB3E9 /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
 		B367391F27906EBC003FB3E9 /* Lists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lists.swift; sourceTree = "<group>"; };
 		B36739212791D64C003FB3E9 /* ListsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsController.swift; sourceTree = "<group>"; };
 		B3D135B92788891600C6264D /* Random Number Gen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Random Number Gen.swift"; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 				B3D135B92788891600C6264D /* Random Number Gen.swift */,
 				C957EA622788969600676339 /* DiceRoller.swift */,
 				C95B4A2F278C8F7B0024C747 /* Card Picker.swift */,
-				B367391C278DDD29003FB3E9 /* UserLists.swift */,
+				B367391C278DDD29003FB3E9 /* UserList.swift */,
 				B36739212791D64C003FB3E9 /* ListsController.swift */,
 				B367391A278CC7C3003FB3E9 /* EditList.swift */,
 				B367391F27906EBC003FB3E9 /* Lists.swift */,
@@ -169,7 +169,7 @@
 				B36739222791D64C003FB3E9 /* ListsController.swift in Sources */,
 				C95B4A30278C8F7B0024C747 /* Card Picker.swift in Sources */,
 				C957EA632788969600676339 /* DiceRoller.swift in Sources */,
-				B367391D278DDD29003FB3E9 /* UserLists.swift in Sources */,
+				B367391D278DDD29003FB3E9 /* UserList.swift in Sources */,
 				B367392027906EBC003FB3E9 /* Lists.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
