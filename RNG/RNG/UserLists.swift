@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct UserLists: Hashable {
+struct UserLists: Hashable, Codable {
     var listName: String
     var listItems: [String]
+    var id = UUID()
 }

@@ -8,26 +8,24 @@
 import SwiftUI
 
 struct EditList: View {
-    @State private var userList2 = [UserLists]()
-    @State private var userList = UserLists(listName: "Colors", listItems: ["Blue", "Red", "Yellow", "Orange", "Pink", "Green", "Black", "White", "Purple", "Brown", "Gray"])
-    @State private var userInput = ""
+    @State var listChosen: UserLists
     
     var body: some View {
         NavigationView {
             List {
                 Section(header: Text("List Name")) {
-                    TextField("Name of your list", text: $userList.listName)
+                    TextField("Name of your list", text: $listChosen.listName)
                 }
                 
                 Section(header: Text("List Items")) {
-                    ForEach(0..<userList.listItems.count, id: \.self) { oneItem in
-                        TextField("", text: $userList.listItems[oneItem])
+                    ForEach(0..<listChosen.listItems.count, id: \.self) { item in
+                        TextField("", text: $listChosen.listItems[item])
                         
                     }
                 }
                 
                 Button {
-                    userList.listItems.append("")
+                    listChosen.listItems.append("")
                 } label: {
                     HStack {
                         Spacer()
@@ -50,6 +48,6 @@ struct EditList: View {
 
 struct EditList_Previews: PreviewProvider {
     static var previews: some View {
-        EditList()
+        EditList(listChosen: UserLists(listName: "Some dude", listItems: ["What", "is", "this", "for"]))
     }
 }
