@@ -11,34 +11,27 @@ struct Menu: View {
     @State private var action: Int? = 0
     
     var body: some View {
-        TabView {
-            NavigationView {
+        NavigationView {
+            TabView {
                 ScrollView {
                     VStack {
                         HStack {
-                            NavigationLink(destination: Random_Number_Gen(), tag: 1, selection: $action) {
                             // RANDOM NUMBER GENERATOR BUTTON
-                            Button {
-                                print("random number generator")
-                            } label: {
+                            NavigationLink(destination: Random_Number_Gen()) {
                                 Image("HashtagRounded")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .padding(5)
                             }
                             // DICE ROLLER GENERATOR
-                            Button {
-                                print("dice roller")
-                            } label: {
+                            NavigationLink(destination: DiceRoller()) {
                                 Image("DiceRounded")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .padding(5)
                             }
                             // RANDOM CARD PICKER GENERTOR
-                            Button {
-                                print("card picker")
-                            } label: {
+                            NavigationLink(destination: Card_Picker()) {
                                 Image("CardRounded")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -47,18 +40,14 @@ struct Menu: View {
                         }
                         HStack {
                             //Spinner
-                            Button {
-                                print("Wheel spinner")
-                            } label: {
+                            NavigationLink(destination: Random_Number_Gen()) {
                                 Image("WheelRounded")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .padding(5)
                             }
                             //Magic 8Ball
-                            Button {
-                                print("yessss")
-                            } label: {
+                            NavigationLink(destination: Random_Number_Gen()) {
                                 Image("8BallRounded")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -71,9 +60,6 @@ struct Menu: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .padding(5)
-                                    .onTapGesture {
-                                       self.action = 1
-                                     }
                             }
                         }
                         HStack {
@@ -129,28 +115,25 @@ struct Menu: View {
                             }
                         }
                     }
-                    //scrollview
+                } //scrollView Closing bracket
+                .tabItem {
+                    Image(systemName: "infinity.circle.fill")
+                    Text("Generators")
                 }
-                .navigationTitle("Random generators")
-                //navView
-            }
-            .tabItem {
-                Image(systemName: "infinity.circle.fill")
-                Text("Generators")
-            }
-            //so long as this text is commented out this tab bar item wont show
-            //Text("fancy generators")
-            .tabItem {
-                Image(systemName: "gear.circle.fill")
-                Text("Fancy Generators")
-            }
-            Text("Lists")
-            .tabItem {
-                Image(systemName: "list.bullet")
+                //so long as this text is commented out this tab bar item wont show
+                //Text("fancy generators")
+                .tabItem {
+                    Image(systemName: "gear.circle.fill")
+                    Text("Fancy Generators")
+                }
                 Text("Lists")
-            }
-            //tabView
-        }
+                    .tabItem {
+                        Image(systemName: "list.bullet")
+                        Text("Lists")
+                    }
+            } //tabView closing bracket
+            .navigationTitle("Random Generators")
+        } //nav view closing bracket
     }
 }
 
