@@ -47,7 +47,7 @@ struct Menu: View {
                                     .padding(5)
                             }
                             //Magic 8Ball
-                            NavigationLink(destination: Random_Number_Gen()) {
+                            NavigationLink(destination: EightBall()) {
                                 Image("8BallRounded")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
