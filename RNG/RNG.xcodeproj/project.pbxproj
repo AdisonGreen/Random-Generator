@@ -44,6 +44,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E0DC185279864090086D3F8 /* RNG programs */ = {
+			isa = PBXGroup;
+			children = (
+				B3D135B92788891600C6264D /* Random Number Gen.swift */,
+				C957EA622788969600676339 /* DiceRoller.swift */,
+				C95B4A2F278C8F7B0024C747 /* Card Picker.swift */,
+			);
+			path = "RNG programs";
+			sourceTree = "<group>";
+		};
 		8E6F513C2784C030000E8BED = {
 			isa = PBXGroup;
 			children = (
@@ -65,9 +75,7 @@
 			children = (
 				8E6F51482784C031000E8BED /* RNGApp.swift */,
 				8E6F51582784C0C3000E8BED /* Menu.swift */,
-				B3D135B92788891600C6264D /* Random Number Gen.swift */,
-				C957EA622788969600676339 /* DiceRoller.swift */,
-				C95B4A2F278C8F7B0024C747 /* Card Picker.swift */,
+				8E0DC185279864090086D3F8 /* RNG programs */,
 				B367391A278CC7C3003FB3E9 /* EditList.swift */,
 				B367391C278DDD29003FB3E9 /* UserLists.swift */,
 				B367391F27906EBC003FB3E9 /* Lists.swift */,
