@@ -20,8 +20,8 @@ struct EditList: View {
                 }
                 
                 Section(header: Text("List Items")) {
-                    ForEach($listChosen.listItems, id: \.self) { item in
-                        TextField("One item from you list", text: item)
+                    ForEach(0..<listChosen.listItems.count, id: \.self) { item in
+                        TextField("One item from you list", text: $listChosen.listItems[item])
                         
                     }
                 }
@@ -40,6 +40,11 @@ struct EditList: View {
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button("Done") {
+                        if listChosen.newList {
+                            userLists.lists.append(listChosen)
+                            listChosen.newList = false
+                        }
+                        
                         userLists.objectWillChange.send()
                         presentationMode.wrappedValue.dismiss()
                     }

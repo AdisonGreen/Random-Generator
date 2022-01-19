@@ -11,7 +11,6 @@ struct Lists: View {
     
     @StateObject var userLists: UserLists = ListsController.shared.userLists
     
-    
     var body: some View {
         NavigationView {
             List {
@@ -20,16 +19,21 @@ struct Lists: View {
                         Text(item.listName)
                     }
                 }
+                .onDelete(perform: delete)
             }
             .navigationTitle("Lists")
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: EditList(listChosen: UserList(listName: "", listItems: ["", ""]), userLists: userLists)) {
+                    NavigationLink(destination: EditList(listChosen: UserList(listName: "", listItems: ["", ""], newList: true), userLists: userLists)) {
                         Image(systemName: "plus")
                     }
                 }
             }
         }
+    }
+    
+    func delete(at offsets: IndexSet) {
+        userLists.lists.remove(atOffsets: offsets)
     }
 }
 

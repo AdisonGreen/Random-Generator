@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct ListsController {
+class ListsController {
     static private let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     private let archiveURL = ListsController.documentsDirectory.appendingPathComponent("Random_Generator_Lists").appendingPathExtension("plist")
 
@@ -24,7 +24,7 @@ struct ListsController {
         loadFromFile()
     }
 
-    mutating func save(list: UserList) {
+    func save(list: UserList) {
         if let index = userLists.lists.firstIndex(where: { existingList in
             existingList.id == list.id
         }){
@@ -40,7 +40,7 @@ struct ListsController {
         try? encodedLists?.write(to: archiveURL, options: .noFileProtection)
     }
 
-    private mutating func loadFromFile() {
+    private func loadFromFile() {
         let propertyListDecoder = PropertyListDecoder()
         if let retrievedListsData = try? Data(contentsOf: archiveURL),
            let decodedLists = try? propertyListDecoder.decode(Array<UserList>.self, from: retrievedListsData) {
@@ -51,6 +51,6 @@ struct ListsController {
     }
 
     private func sampleLists() -> [UserList] {
-        return [UserList(listName: "Colors", listItems: ["Blue", "Red", "Yellow", "Orange", "Pink", "Green", "Black", "White", "Purple", "Brown", "Gray"]), UserList(listName: "Food", listItems: ["Hamburger", "Pizza"])]
+        return [UserList(listName: "Colors", listItems: ["Blue", "Red", "Yellow", "Orange", "Pink", "Green", "Black", "White", "Purple", "Brown", "Gray"], newList: false), UserList(listName: "Food", listItems: ["Hamburger", "Pizza"], newList: false)]
     }
 }

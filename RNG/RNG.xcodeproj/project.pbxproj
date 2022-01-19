@@ -73,10 +73,7 @@
 				B3D135B92788891600C6264D /* Random Number Gen.swift */,
 				C957EA622788969600676339 /* DiceRoller.swift */,
 				C95B4A2F278C8F7B0024C747 /* Card Picker.swift */,
-				B367391C278DDD29003FB3E9 /* UserList.swift */,
-				B36739212791D64C003FB3E9 /* ListsController.swift */,
-				B367391A278CC7C3003FB3E9 /* EditList.swift */,
-				B367391F27906EBC003FB3E9 /* Lists.swift */,
+				B3673923279863F7003FB3E9 /* Lists */,
 				8E6F514C2784C033000E8BED /* Assets.xcassets */,
 				8E6F514E2784C033000E8BED /* Preview Content */,
 			);
@@ -89,6 +86,17 @@
 				8E6F514F2784C033000E8BED /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B3673923279863F7003FB3E9 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				B367391F27906EBC003FB3E9 /* Lists.swift */,
+				B367391A278CC7C3003FB3E9 /* EditList.swift */,
+				B36739212791D64C003FB3E9 /* ListsController.swift */,
+				B367391C278DDD29003FB3E9 /* UserList.swift */,
+			);
+			path = Lists;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
