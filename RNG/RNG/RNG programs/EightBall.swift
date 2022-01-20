@@ -8,7 +8,7 @@ import SwiftUI
 
 extension Color {
     static let seafoam = Color(red: 147 / 255, green: 233 / 255, blue: 190 / 255)
-    static let deepBlack = Color(red: 24 / 255, green: 25 / 255, blue: 25 / 255)
+    static let deepBlack = Color(red: 30 / 255, green: 30 / 255, blue: 30 / 255)
     static let silverBlack = Color(red: 20 / 255, green: 20 / 255, blue: 20 / 255)
 }
 enum EightBallAnswers: CaseIterable {
@@ -72,17 +72,17 @@ struct EightBall: View {
     var body: some View {
         VStack {
             ZStack {
-                let customMaxSize = 500.0
                 Circle()
                     .fill(.black)
-                    .frame(minWidth: 1.0, maxWidth: customMaxSize, minHeight: 1.0, maxHeight: customMaxSize)
-                    .shadow(radius: 3)
-                Circle()
-                    .fill(Color.silverBlack)
-                    .frame(minWidth: 1.0, maxWidth: (customMaxSize / 2.7 + 10), minHeight: 1.0, maxHeight: (customMaxSize / 2.7 + 10))
+                    .aspectRatio(1, contentMode: ContentMode.fit)
+                    .padding(10)
+                    .padding(.vertical, 50)
                 Circle()
                     .fill(Color.deepBlack)
-                    .frame(minWidth: 1.0, maxWidth: (customMaxSize / 2.7), minHeight: 1.0, maxHeight: (customMaxSize / 2.7))
+                    .aspectRatio(1, contentMode: ContentMode.fit)
+                    .padding(100)
+                    .padding(.vertical, 50)
+                    .shadow(radius: 3)
                 Text(EightBallAnswer)
                     .multilineTextAlignment(.center)
                     .lineLimit(5)
