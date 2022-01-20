@@ -8,22 +8,26 @@
 import SwiftUI
 
 struct Lists: View {
-    @State private var userList = [UserLists(listName: "Colors", listItems: ["Blue", "Red", "Yellow", "Orange", "Pink", "Green", "Black", "White", "Purple", "Brown", "Gray"]), UserLists(listName: "Food", listItems: ["Hamburger", "Pizza"])]
+    
+    @StateObject var userLists: UserLists = ListsController.shared.userLists
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(userList, id: \.self) { item in
-                    NavigationLink(destination: EditList()) {
+                ForEach(userLists.lists, id: \.id) { item in
+                    NavigationLink(destination: EditList(listChosen: item, userLists: userLists)) {
                         Text(item.listName)
                     }
                 }
                 .onDelete(perform: delete)
             }
+            .onAppear {
+                userLists.objectWillChange.send()
+            }
             .navigationTitle("Lists")
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: EditList()) {
+                    NavigationLink(destination: EditList(listChosen: UserList(listName: "", listItems: ["", ""], newList: true), userLists: userLists)) {
                         Image(systemName: "plus")
                     }
                 }
@@ -32,7 +36,8 @@ struct Lists: View {
     }
     
     func delete(at offsets: IndexSet) {
-        userList.remove(atOffsets: offsets)
+        userLists.lists.remove(atOffsets: offsets)
+        userLists.objectWillChange.send()
     }
 }
 
