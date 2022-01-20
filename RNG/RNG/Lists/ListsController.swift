@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 class ListsController {
     static private let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -14,17 +15,17 @@ class ListsController {
 
     static let shared = ListsController()
 
-    @ObservedObject var userLists: UserLists = UserLists() {
-        didSet {
-            saveToFile(list: userLists.lists)
+    @ObservedObject var userLists: UserLists = UserLists()
+    var publisher: AnyCancellable?
+    init() {
+        loadFromFile()
+        publisher = userLists.objectWillChange
+            .sink { _ in
+            self.saveToFile(list: self.userLists.lists)
         }
     }
 
-    init() {
-        loadFromFile()
-    }
-
-    func save(list: UserList) {
+    func add(list: UserList) {
         if let index = userLists.lists.firstIndex(where: { existingList in
             existingList.id == list.id
         }){

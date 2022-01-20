@@ -21,6 +21,9 @@ struct Lists: View {
                 }
                 .onDelete(perform: delete)
             }
+            .onAppear {
+                userLists.objectWillChange.send()
+            }
             .navigationTitle("Lists")
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
@@ -34,6 +37,7 @@ struct Lists: View {
     
     func delete(at offsets: IndexSet) {
         userLists.lists.remove(atOffsets: offsets)
+        userLists.objectWillChange.send()
     }
 }
 
