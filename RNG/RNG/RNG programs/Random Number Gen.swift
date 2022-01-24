@@ -13,10 +13,6 @@ struct Random_Number_Gen: View {
     
     @State private var randomNum = 1
     
-    @State private var minMoreThanMax = false
-    @State private var minTextFieldIsEmpty = false
-    @State private var maxTextFieldIsEmpty = false
-    
     @FocusState private var amountIsFocused: Bool
     
     var body: some View {
@@ -48,38 +44,32 @@ struct Random_Number_Gen: View {
             .clipShape(RoundedRectangle(cornerRadius: 10))
             
             Button("Generate") {
-                guard let minTextField = minTextField else {
-                    minTextFieldIsEmpty.toggle()
+                guard let minnTextField = minTextField else {
+                    minTextField = 1
                     return
                 }
                 
-                guard let maxTextField = maxTextField else {
-                    maxTextFieldIsEmpty.toggle()
+                guard let maxxTextField = maxTextField else {
+                    maxTextField = 100
                     return
                 }
                 
-                if minTextField > maxTextField {
-                    minMoreThanMax.toggle()
+                if minnTextField > maxxTextField {
+                    minTextField = maxTextField
                 } else {
-                    randomNum = Int.random(in: minTextField...maxTextField)
+                    randomNum = Int.random(in: minnTextField...maxxTextField)
                 }
             }
-            .frame(width: 300, height: 40)
-            .foregroundColor(.mint)
-            .background(.black)
+            .foregroundColor(.white)
+            .multilineTextAlignment(.center)
+            .padding()
+            .font(.title)
+            .background(Color.seafoam)
+            .cornerRadius(40)
+            .shadow(radius: 3)
+            .frame(minWidth: 1, maxWidth: .infinity)
             Spacer()
         }
-        .alert("The minimum must be lower than the maximum", isPresented: $minMoreThanMax) {
-            Button("Ok", role: .cancel) { }
-        }
-        .alert("You must have a minimum", isPresented: $minTextFieldIsEmpty) {
-            Button("Ok", role: .cancel) { }
-        }
-        .alert("You must have a maximum", isPresented: $maxTextFieldIsEmpty) {
-            Button("Ok", role: .cancel) { }
-        }
-        
-        .ignoresSafeArea()
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
