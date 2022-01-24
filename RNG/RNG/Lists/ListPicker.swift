@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ListPicker: View {
-    @StateObject var userLists = ListsController.shared.userLists
-    @State private var selection = ListsController.shared.userLists.lists.startIndex
+    @State private var userLists = ListsController.shared.userLists
+    @State private var selection = ListsController.shared.userLists.lists.first
+    
     var body: some View {
         List {
             HStack {
@@ -20,7 +21,7 @@ struct ListPicker: View {
                         Text("\(item.listName)")
                     }
                 }
-                .pickerStyle(MenuPickerStyle())
+                .pickerStyle(.menu)
             }
         }
     }
