@@ -19,6 +19,7 @@
 		B3673927279B0A2B003FB3E9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3673926279B0A2B003FB3E9 /* Card.swift */; };
 		B3673929279B0A32003FB3E9 /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3673928279B0A32003FB3E9 /* CardsView.swift */; };
 		B367392B279B0A38003FB3E9 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367392A279B0A38003FB3E9 /* CardViewModel.swift */; };
+		B3673931279EF088003FB3E9 /* ListPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3673930279EF088003FB3E9 /* ListPicker.swift */; };
 		B3D135BA2788891600C6264D /* Random Number Gen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D135B92788891600C6264D /* Random Number Gen.swift */; };
 		C957EA632788969600676339 /* DiceRoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957EA622788969600676339 /* DiceRoller.swift */; };
 		C95B4A30278C8F7B0024C747 /* Card Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B4A2F278C8F7B0024C747 /* Card Picker.swift */; };
@@ -38,6 +39,7 @@
 		B3673926279B0A2B003FB3E9 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		B3673928279B0A32003FB3E9 /* CardsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
 		B367392A279B0A38003FB3E9 /* CardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		B3673930279EF088003FB3E9 /* ListPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPicker.swift; sourceTree = "<group>"; };
 		B3D135B92788891600C6264D /* Random Number Gen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Random Number Gen.swift"; sourceTree = "<group>"; };
 		C957EA622788969600676339 /* DiceRoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRoller.swift; sourceTree = "<group>"; };
 		C95B4A2F278C8F7B0024C747 /* Card Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card Picker.swift"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				8EF84B612799C17500A2D859 /* EditList.swift */,
+				B3673930279EF088003FB3E9 /* ListPicker.swift */,
 				8EF84B622799C17500A2D859 /* Lists.swift */,
 				8EF84B642799C17500A2D859 /* ListsController.swift */,
 				8EF84B632799C17500A2D859 /* UserList.swift */,
@@ -201,6 +204,7 @@
 				8EF84B652799C17500A2D859 /* EditList.swift in Sources */,
 				8EF84B682799C17500A2D859 /* ListsController.swift in Sources */,
 				B3673929279B0A32003FB3E9 /* CardsView.swift in Sources */,
+				B3673931279EF088003FB3E9 /* ListPicker.swift in Sources */,
 				8E6F51492784C031000E8BED /* RNGApp.swift in Sources */,
 				B367392B279B0A38003FB3E9 /* CardViewModel.swift in Sources */,
 				8EF84B662799C17500A2D859 /* Lists.swift in Sources */,
