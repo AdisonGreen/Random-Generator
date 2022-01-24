@@ -44,7 +44,7 @@ struct Card_Picker: View {
                     .font(.title3)
                     .padding(20)
                     .frame(alignment: .bottom)
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 45, trailing: 0))
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Cards")
