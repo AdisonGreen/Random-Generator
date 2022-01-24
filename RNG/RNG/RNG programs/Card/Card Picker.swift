@@ -10,7 +10,6 @@ struct Card_Picker: View {
     @ObservedObject var viewModel = CardViewModel()
     
     var body: some View {
-        NavigationView {
             VStack {
                 CardsView(viewModel: viewModel)
                 
@@ -36,8 +35,8 @@ struct Card_Picker: View {
                     .frame(alignment: .bottom)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 45, trailing: 0))
             }
+            .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Cards")
-        }
     }
 }
 
