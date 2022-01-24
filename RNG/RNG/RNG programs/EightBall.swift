@@ -6,11 +6,6 @@
 
 import SwiftUI
 
-extension Color {
-    static let seafoam = Color(red: 147 / 255, green: 233 / 255, blue: 190 / 255)
-    static let deepBlack = Color(red: 30 / 255, green: 30 / 255, blue: 30 / 255)
-    static let silverBlack = Color(red: 20 / 255, green: 20 / 255, blue: 20 / 255)
-}
 enum EightBallAnswers: CaseIterable {
     //yes answers
     case It_is_certain
