@@ -20,81 +20,78 @@ struct Random_Number_Gen: View {
     @FocusState private var amountIsFocused: Bool
     
     var body: some View {
-        NavigationView {
+        VStack {
+            Spacer()
+            Spacer()
+            Text("\(randomNum)")
+                .font(.largeTitle)
+            Spacer()
+            Spacer()
+            
             VStack {
-                Spacer()
-                Spacer()
-                Text("\(randomNum)")
-                    .font(.largeTitle)
-                Spacer()
-                Spacer()
-                
-                VStack {
-                    HStack(alignment: .center) {
-                        Spacer()
-                        Text("Min")
-                        TextField("Minimum number", value: $minTextField, format: .number)
-                            .keyboardType(.numberPad)
-                            .focused($amountIsFocused)
-                    }
-                    HStack(alignment: .center) {
-                        Spacer()
-                        Text("Max")
-                        TextField("Maximum number", value: $maxTextField, format: .number)
-                            .keyboardType(.numberPad)
-                            .focused($amountIsFocused)
-                    }
-                }
-                .background(.ultraThinMaterial)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                
-                Button("Generate") {
-                    guard let minTextField = minTextField else {
-                        minTextFieldIsEmpty.toggle()
-                        return
-                    }
-                    
-                    guard let maxTextField = maxTextField else {
-                        maxTextFieldIsEmpty.toggle()
-                        return
-                    }
-                    
-                    if minTextField > maxTextField {
-                        minMoreThanMax.toggle()
-                    } else {
-                        randomNum = Int.random(in: minTextField...maxTextField)
-                    }
-                }
-                .frame(width: 300, height: 40)
-                .foregroundColor(.mint)
-                .background(.black)
-                Spacer()
-            }
-            .alert("The minimum must be lower than the maximum", isPresented: $minMoreThanMax) {
-                Button("Ok", role: .cancel) { }
-            }
-            .alert("You must have a minimum", isPresented: $minTextFieldIsEmpty) {
-                Button("Ok", role: .cancel) { }
-            }
-            .alert("You must have a maximum", isPresented: $maxTextFieldIsEmpty) {
-                Button("Ok", role: .cancel) { }
-            }
-            .background(AngularGradient(gradient: Gradient(colors: [ .blue, .mint, .blue]),
-                                        center: .center))
-            .ignoresSafeArea()
-            .navigationTitle("Random Number")
-            .toolbar {
-                ToolbarItemGroup(placement: .keyboard) {
+                HStack(alignment: .center) {
                     Spacer()
-                    
-                    Button("Done") {
-                        amountIsFocused = false
-                    }
+                    Text("Min")
+                    TextField("Minimum number", value: $minTextField, format: .number)
+                        .keyboardType(.numberPad)
+                        .focused($amountIsFocused)
+                }
+                HStack(alignment: .center) {
+                    Spacer()
+                    Text("Max")
+                    TextField("Maximum number", value: $maxTextField, format: .number)
+                        .keyboardType(.numberPad)
+                        .focused($amountIsFocused)
+                }
+            }
+            .background(.ultraThinMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            
+            Button("Generate") {
+                guard let minTextField = minTextField else {
+                    minTextFieldIsEmpty.toggle()
+                    return
+                }
+                
+                guard let maxTextField = maxTextField else {
+                    maxTextFieldIsEmpty.toggle()
+                    return
+                }
+                
+                if minTextField > maxTextField {
+                    minMoreThanMax.toggle()
+                } else {
+                    randomNum = Int.random(in: minTextField...maxTextField)
+                }
+            }
+            .frame(width: 300, height: 40)
+            .foregroundColor(.mint)
+            .background(.black)
+            Spacer()
+        }
+        .alert("The minimum must be lower than the maximum", isPresented: $minMoreThanMax) {
+            Button("Ok", role: .cancel) { }
+        }
+        .alert("You must have a minimum", isPresented: $minTextFieldIsEmpty) {
+            Button("Ok", role: .cancel) { }
+        }
+        .alert("You must have a maximum", isPresented: $maxTextFieldIsEmpty) {
+            Button("Ok", role: .cancel) { }
+        }
+        
+        .ignoresSafeArea()
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                
+                Button("Done") {
+                    amountIsFocused = false
                 }
             }
         }
     }
 }
+
 
 
 struct Random_Number_Gen_Previews: PreviewProvider {

@@ -29,11 +29,13 @@ struct DiceRoller: View {
     
     var body: some View {
         VStack {
+            Spacer()
             startingImage
                 .resizable()
                 .scaledToFit()
                 .padding()
-            
+            Spacer()
+            Spacer()
             Button {
                 randomDice()
             } label: {
@@ -47,6 +49,7 @@ struct DiceRoller: View {
                     .shadow(radius: 3)
                     .frame(minWidth: 1, maxWidth: .infinity)
             }
+            Spacer()
         }
     }
 }
