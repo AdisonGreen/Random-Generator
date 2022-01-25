@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ListPicker: View {
-    @State private var userLists = ListsController.shared.userLists
-    @State private var selection = ListsController.shared.userLists.lists.first
+    let userLists = ListsController.shared.userLists.lists
+    @State private var selection = ListsController.shared.userLists.lists.last
     
     var body: some View {
         List {
@@ -17,7 +17,7 @@ struct ListPicker: View {
                 Text("List")
                 Spacer()
                 Picker("Select the list you want to use", selection: $selection) {
-                    ForEach(userLists.lists, id: \.id) { item in
+                    ForEach(userLists, id: \.id) { item in
                         Text("\(item.listName)")
                     }
                 }

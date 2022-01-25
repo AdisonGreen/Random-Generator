@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserLists: ObservableObject, Hashable {
+class UserLists: ObservableObject, Hashable, Identifiable {
     static func == (lhs: UserLists, rhs: UserLists) -> Bool {
         lhs.lists == rhs.lists
     }
