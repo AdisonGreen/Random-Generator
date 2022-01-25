@@ -24,4 +24,11 @@ class CardViewModel: ObservableObject {
         }
         shuffledDeck = Card.all.shuffled()
     }
+    func addJokers() {
+        Card.all.append(Card(name: "black_joker"))
+        Card.all.append(Card(name: "red_joker"))
+    }
+    func removeJoker() {
+//        Card.all.remove(
+    }
 }
