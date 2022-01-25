@@ -38,6 +38,13 @@ struct Card_Picker: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Cards")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: Settings()) {
+                        Text("Settings")
+                    }
+                }
+            }
     }
 }
 
