@@ -19,7 +19,7 @@ class UserLists: ObservableObject, Hashable {
     }
 }
 
-class UserList: Codable, ObservableObject, Hashable {
+class UserList: Codable, ObservableObject, Hashable, Identifiable {
     enum CodingKeys: CodingKey {
         case listName
         case listItems
