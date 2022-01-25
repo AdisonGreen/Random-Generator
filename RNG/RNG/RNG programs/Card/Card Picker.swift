@@ -6,17 +6,6 @@
 
 import SwiftUI
 
-// The layout is weird on the following phones and it says whats wrong with it. 
-// iphone 8 when its one card and 3, 4 cards
-// iphone 8 plus when its one card and 3, 4 cards
-// iphone 11 just when it is one card
-// iphone 11 pro max when its one card
-// iphone 12 pro max when its one card and 5 cards
-// iphone 13 pro max when its one card and 5 cards
-// iphone se - 2nd gen when its one card and 3, 4 cards
-// ipod touch 7th gen when its one card and 3, 4 cards
-
-
 struct Card_Picker: View {
     @ObservedObject var viewModel = CardViewModel()
     
@@ -39,6 +28,7 @@ struct Card_Picker: View {
                             .font(.title3)
                     }
                 }
+//                .padding(EdgeInsets(top: 0, leading: 0, bottom: -5, trailing: 0))
                 .frame(alignment: .bottom)
                 Stepper("Number of Cards: \(viewModel.numberVisible)", value: $viewModel.numberVisible, in: 0...6)
                     .font(.title3)
