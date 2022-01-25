@@ -10,7 +10,6 @@ struct Card_Picker: View {
     @ObservedObject var viewModel = CardViewModel()
     
     var body: some View {
-        NavigationView {
             VStack {
                 CardsView(viewModel: viewModel)
                 
@@ -29,15 +28,16 @@ struct Card_Picker: View {
                             .font(.title3)
                     }
                 }
+//                .padding(EdgeInsets(top: 0, leading: 0, bottom: -5, trailing: 0))
                 .frame(alignment: .bottom)
                 Stepper("Number of Cards: \(viewModel.numberVisible)", value: $viewModel.numberVisible, in: 0...6)
                     .font(.title3)
                     .padding(20)
                     .frame(alignment: .bottom)
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 45, trailing: 0))
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
+            .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Cards")
-        }
     }
 }
 
