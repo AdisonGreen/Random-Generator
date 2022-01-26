@@ -20,7 +20,7 @@ struct ListPicker: View {
                     Spacer()
                     Picker("Select the list you want to use", selection: $userList) {
                         ForEach(selection.lists, id: \.id) { item in
-                            Text("\(item.listName)")
+                            Text("\(item.listName)").tag(item)
                         }
                     }
                     .pickerStyle(.menu)
