@@ -12,7 +12,7 @@ struct Menu: View {
     
     var body: some View {
         NavigationView {
-            TabView {
+           
                 ScrollView {
                     VStack {
                         HStack {
@@ -151,23 +151,7 @@ struct Menu: View {
                         }
                     }
                 } //scrollView Closing bracket
-                .tabItem {
-                    Image(systemName: "infinity.circle.fill")
-                    Text("Generators")
-                }
-                //so long as this text is commented out this tab bar item wont show
-                //Text("fancy generators")
-                .tabItem {
-                    Image(systemName: "gear.circle.fill")
-                    Text("Fancy Generators")
-                }
-                Lists()
-                    .tabItem {
-                        Image(systemName: "list.bullet")
-                        Text("Lists")
-                    }
-                    .navigationTitle("Random Generators")
-            } //tabView closing bracket
+                
             .navigationTitle("Random Generators")
         } //nav view closing bracket
     }
