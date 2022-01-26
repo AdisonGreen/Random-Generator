@@ -66,6 +66,7 @@ struct EightBall: View {
     
     var body: some View {
         VStack {
+            
             ZStack {
                 Circle()
                     .fill(.black)

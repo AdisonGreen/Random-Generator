@@ -23,7 +23,6 @@ struct Menu: View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .padding(5)
-                                    
                                 }
                                 Text("Random Number Generator")
                                     .font(.subheadline)
@@ -167,6 +166,7 @@ struct Menu: View {
                         Image(systemName: "list.bullet")
                         Text("Lists")
                     }
+                    .navigationTitle("Random Generators")
             } //tabView closing bracket
             .navigationTitle("Random Generators")
         } //nav view closing bracket
