@@ -161,7 +161,7 @@ struct Menu: View {
                     Image(systemName: "gear.circle.fill")
                     Text("Fancy Generators")
                 }
-                Text("Lists")
+                Lists()
                     .tabItem {
                         Image(systemName: "list.bullet")
                         Text("Lists")
