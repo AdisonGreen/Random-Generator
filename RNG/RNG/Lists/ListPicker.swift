@@ -14,15 +14,18 @@ struct ListPicker: View {
     
     var body: some View {
         List {
-            HStack {
-                Text("List")
-                Spacer()
-                Picker("Select the list you want to use", selection: $userList) {
-                    ForEach(selection.lists, id: \.id) { item in
-                        Text("\(item.listName)")
+            VStack {
+                HStack {
+                    Text("List")
+                    Spacer()
+                    Picker("Select the list you want to use", selection: $userList) {
+                        ForEach(selection.lists, id: \.id) { item in
+                            Text("\(item.listName)")
+                        }
                     }
+                    .pickerStyle(.menu)
                 }
-                .pickerStyle(.menu)
+                Text("You selected \(userList.listName)")
             }
         }
     }
