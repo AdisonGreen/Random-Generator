@@ -28,7 +28,6 @@ struct Card_Picker: View {
                             .font(.title3)
                     }
                 }
-//                .padding(EdgeInsets(top: 0, leading: 0, bottom: -5, trailing: 0))
                 .frame(alignment: .bottom)
                 Stepper("Number of Cards: \(viewModel.numberVisible)", value: $viewModel.numberVisible, in: 0...6)
                     .font(.title3)

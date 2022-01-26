@@ -18,6 +18,7 @@ struct Settings: View {
                 .onChange(of: includeJokers) { value in
                     if includeJokers == true {
                         viewModel.addJokers()
+                        includeJokers = true
                     } else {
                         viewModel.removeJoker()
                     }

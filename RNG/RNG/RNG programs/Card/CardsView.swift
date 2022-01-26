@@ -15,12 +15,11 @@ struct CardsView: View {
     
     var body: some View {
         ZStack {
-//            HStack {
-                startingImage
-                    .resizable()
-                    .scaledToFit()
-                    .opacity(0.0)
-//            }
+            startingImage
+                .resizable()
+                .scaledToFit()
+                .opacity(0.0)
+            
             
             if viewModel.numberVisible == 1 {
                 LazyVGrid(columns: [GridItem(.flexible(minimum: 192, maximum: 192))]) {
