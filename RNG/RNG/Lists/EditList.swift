@@ -13,41 +13,40 @@ struct EditList: View {
     @StateObject var userLists: UserLists
     
     var body: some View {
-        NavigationView {
-            List {
-                Section(header: Text("List Name")) {
-                    TextField("Name of your list", text: $listChosen.listName)
-                }
-                
-                Section(header: Text("List Items")) {
-                    ForEach(0..<listChosen.listItems.count, id: \.self) { item in
-                        TextField("One item from you list", text: $listChosen.listItems[item])
-                        
-                    }
-                }
-                
-                Button {
-                    listChosen.listItems.append("")
-                } label: {
-                    HStack {
-                        Spacer()
-                        Image(systemName: "plus")
-                        Spacer()
-                    }
+        
+        List {
+            Section(header: Text("List Name")) {
+                TextField("Name of your list", text: $listChosen.listName)
+            }
+            
+            Section(header: Text("List Items")) {
+                ForEach(0..<listChosen.listItems.count, id: \.self) { item in
+                    TextField("One item from you list", text: $listChosen.listItems[item])
+                    
                 }
             }
-            .navigationTitle("Edit Lists")
-            .toolbar {
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Button("Done") {
-                        if listChosen.newList {
-                            userLists.lists.append(listChosen)
-                            listChosen.newList = false
-                        }
-                        
-                        userLists.objectWillChange.send()
-                        presentationMode.wrappedValue.dismiss()
+            
+            Button {
+                listChosen.listItems.append("")
+            } label: {
+                HStack {
+                    Spacer()
+                    Image(systemName: "plus")
+                    Spacer()
+                }
+            }
+        }
+        .navigationTitle("Edit Lists")
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Button("Done") {
+                    if listChosen.newList {
+                        userLists.lists.append(listChosen)
+                        listChosen.newList = false
                     }
+                    
+                    userLists.objectWillChange.send()
+                    presentationMode.wrappedValue.dismiss()
                 }
             }
         }
