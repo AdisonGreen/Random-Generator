@@ -11,8 +11,8 @@ struct Menu: View {
     @State private var action: Int? = 0
     
     var body: some View {
+        NavigationView {
             TabView {
-                NavigationView {
                 ScrollView {
                     VStack {
                         HStack {
@@ -23,7 +23,6 @@ struct Menu: View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .padding(5)
-                                        .navigationTitle("Random Number Generator")
                                 }
                                 Text("Random Number Generator")
                                     .font(.subheadline)
