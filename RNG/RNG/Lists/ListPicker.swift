@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct ListPicker: View {
-    let userLists = ListsController.shared.userLists.lists
-    @ObservedObject private var selection = ListsController.shared.userLists
+    @State var userList: UserList
+    
+    private let selection = ListsController.shared.userLists
     
     var body: some View {
         List {
             HStack {
                 Text("List")
                 Spacer()
-                Picker("Select the list you want to use", selection: $selection.lists) {
-                    ForEach(userLists, id: \.id) { item in
+                Picker("Select the list you want to use", selection: $userList) {
+                    ForEach(selection.lists, id: \.id) { item in
                         Text("\(item.listName)")
                     }
                 }
@@ -29,6 +30,6 @@ struct ListPicker: View {
 
 struct ListPicker_Previews: PreviewProvider {
     static var previews: some View {
-        ListPicker()
+        ListPicker(userList: ListsController.shared.userLists.lists.first!)
     }
 }

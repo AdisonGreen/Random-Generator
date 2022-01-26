@@ -11,7 +11,7 @@ import SwiftUI
 struct RNGApp: App {
     var body: some Scene {
         WindowGroup {
-            ListPicker()
+            ListPicker(userList: ListsController.shared.userLists.lists.first!)
         }
     } 
 }
