@@ -7,11 +7,19 @@
 
 import Foundation
 
-class UserLists: ObservableObject {
+class UserLists: ObservableObject, Hashable, Identifiable {
+    static func == (lhs: UserLists, rhs: UserLists) -> Bool {
+        lhs.lists == rhs.lists
+    }
+    
     @Published var lists: [UserList] = []
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(lists)
+    }
 }
 
-class UserList: Codable, ObservableObject {
+class UserList: Codable, ObservableObject, Hashable, Identifiable {
     enum CodingKeys: CodingKey {
         case listName
         case listItems
@@ -48,5 +56,9 @@ class UserList: Codable, ObservableObject {
         self.listName = listName
         self.listItems = listItems
         self.newList = newList
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(listName)
     }
 }
