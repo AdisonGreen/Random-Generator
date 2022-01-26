@@ -21,6 +21,7 @@ struct Settings: View {
                         includeJokers = true
                     } else {
                         viewModel.removeJoker()
+                        includeJokers = false
                     }
                 }
         }
