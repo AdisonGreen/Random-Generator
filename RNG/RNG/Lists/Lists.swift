@@ -12,24 +12,23 @@ struct Lists: View {
     @StateObject var userLists: UserLists = ListsController.shared.userLists
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(userLists.lists, id: \.id) { item in
-                    NavigationLink(destination: EditList(listChosen: item, userLists: userLists)) {
-                        Text(item.listName)
-                    }
+        
+        List {
+            ForEach(userLists.lists, id: \.id) { item in
+                NavigationLink(destination: EditList(listChosen: item, userLists: userLists)) {
+                    Text(item.listName)
                 }
-                .onDelete(perform: delete)
             }
-            .onAppear {
-                userLists.objectWillChange.send()
-            }
-            .navigationTitle("Lists")
-            .toolbar {
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: EditList(listChosen: UserList(listName: "", listItems: ["", ""], newList: true), userLists: userLists)) {
-                        Image(systemName: "plus")
-                    }
+            .onDelete(perform: delete)
+        }
+        .onAppear {
+            userLists.objectWillChange.send()
+        }
+        .navigationTitle("Lists")
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                NavigationLink(destination: EditList(listChosen: UserList(listName: "", listItems: ["", ""], newList: true), userLists: userLists)) {
+                    Image(systemName: "plus")
                 }
             }
         }
