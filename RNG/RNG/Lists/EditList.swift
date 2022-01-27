@@ -24,6 +24,10 @@ struct EditList: View {
                     TextField("One item from you list", text: $listChosen.listItems[item])
                     
                 }
+                .onDelete(perform: delete)
+            }
+            .onAppear {
+                userLists.objectWillChange.send()
             }
             
             Button {
@@ -50,6 +54,10 @@ struct EditList: View {
                 }
             }
         }
+    }
+    func delete(at offsets: IndexSet) {
+        listChosen.listItems.remove(atOffsets: offsets)
+        userLists.objectWillChange.send()
     }
 }
 
