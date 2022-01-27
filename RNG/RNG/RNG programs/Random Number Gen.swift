@@ -79,6 +79,8 @@ struct Random_Number_Gen: View {
                 }
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Random Number Generator")
     }
 }
 

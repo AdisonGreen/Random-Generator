@@ -51,6 +51,8 @@ struct DiceRoller: View {
             }
             Spacer()
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Dice Roller")
     }
 }
 
