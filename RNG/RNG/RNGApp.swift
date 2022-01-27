@@ -11,7 +11,7 @@ import SwiftUI
 struct RNGApp: App {
     var body: some Scene {
         WindowGroup {
-            Menu()
+            WheelSpinner()
         }
     } 
 }

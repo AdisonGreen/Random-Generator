@@ -8,31 +8,36 @@
 import SwiftUI
 
 struct ListPicker: View {
-    @State var userList: UserList
+    @State var selection: UserList
     
-    private let selection = ListsController.shared.userLists
+    private let userList = ListsController.shared.userLists
     
     var body: some View {
-        List {
-            VStack {
-                HStack {
-                    Text("List")
-                    Spacer()
-                    Picker("Select the list you want to use", selection: $userList) {
-                        ForEach(selection.lists, id: \.id) { item in
-                            Text("\(item.listName)").tag(item)
-                        }
+        VStack {
+            HStack {
+                Spacer()
+                Text("List")
+                Spacer()
+                Spacer()
+                Spacer()
+                Spacer()
+                Picker("Select the list you want to use", selection: $selection) {
+                    ForEach(userList.lists, id: \.id) { item in
+                        Text("\(item.listName)").tag(item)
                     }
-                    .pickerStyle(.menu)
                 }
-                Text("You selected \(userList.listName)")
+                .pickerStyle(.menu)
+                Spacer()
             }
+            Text("You selected \(selection.listName)")
         }
+        .background(.ultraThinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 }
 
 struct ListPicker_Previews: PreviewProvider {
     static var previews: some View {
-        ListPicker(userList: ListsController.shared.userLists.lists.first!)
+        ListPicker(selection: ListsController.shared.userLists.lists.first!)
     }
 }
