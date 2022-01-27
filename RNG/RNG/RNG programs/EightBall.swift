@@ -100,6 +100,8 @@ struct EightBall: View {
                     
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Magic 8 Ball")
     }
 }
 
