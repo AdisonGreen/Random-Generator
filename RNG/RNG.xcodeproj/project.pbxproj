@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8E0DC187279864900086D3F8 /* EightBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0DC186279864900086D3F8 /* EightBall.swift */; };
+		8E0FC0E927A1AD25002DC4ED /* Ad Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0FC0E827A1AD25002DC4ED /* Ad Generator.swift */; };
 		8E6F51492784C031000E8BED /* RNGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6F51482784C031000E8BED /* RNGApp.swift */; };
 		8E6F514D2784C033000E8BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E6F514C2784C033000E8BED /* Assets.xcassets */; };
 		8E6F51502784C033000E8BED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E6F514F2784C033000E8BED /* Preview Assets.xcassets */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		8E0DC186279864900086D3F8 /* EightBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EightBall.swift; sourceTree = "<group>"; };
+		8E0FC0E827A1AD25002DC4ED /* Ad Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ad Generator.swift"; sourceTree = "<group>"; };
 		8E6F51452784C031000E8BED /* RNG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E6F51482784C031000E8BED /* RNGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNGApp.swift; sourceTree = "<group>"; };
 		8E6F514C2784C033000E8BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		8E0DC185279864090086D3F8 /* RNG programs */ = {
 			isa = PBXGroup;
 			children = (
+				8E0FC0E827A1AD25002DC4ED /* Ad Generator.swift */,
 				B3673925279B09FD003FB3E9 /* Card */,
 				C957EA622788969600676339 /* DiceRoller.swift */,
 				8E0DC186279864900086D3F8 /* EightBall.swift */,
@@ -213,6 +216,7 @@
 				B3673929279B0A32003FB3E9 /* CardsView.swift in Sources */,
 				B3673931279EF088003FB3E9 /* ListPicker.swift in Sources */,
 				8E6F51492784C031000E8BED /* RNGApp.swift in Sources */,
+				8E0FC0E927A1AD25002DC4ED /* Ad Generator.swift in Sources */,
 				B367392B279B0A38003FB3E9 /* CardViewModel.swift in Sources */,
 				8ED2D049279EF7BC004153F0 /* Custom Colors.swift in Sources */,
 				8EF84B662799C17500A2D859 /* Lists.swift in Sources */,
@@ -351,6 +355,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RNG/Preview Content\"";
 				DEVELOPMENT_TEAM = 363863NZ5H;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -382,6 +390,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RNG/Preview Content\"";
 				DEVELOPMENT_TEAM = 363863NZ5H;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
