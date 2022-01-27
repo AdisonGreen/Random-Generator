@@ -15,13 +15,14 @@ struct TabBarView: View {
                     Image(systemName: "infinity.circle.fill")
                     Text("Generators")
                 }
-    
+
             Lists()
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("Lists")
                 }
         }
+
     }
 }
 
