@@ -8,36 +8,50 @@ import SwiftUI
 
 struct Card_Picker: View {
     @ObservedObject var viewModel = CardViewModel()
+    @State var includeJokers = false
     
     var body: some View {
-            VStack {
-                CardsView(viewModel: viewModel)
-                
-                Button(action: {
-                    viewModel.newCard()
-                    viewModel.shuffle()
-                }) {
-                    if viewModel.numberVisible == 0 {
-                        Text("Pick A Card")
-                            .font(.title3)
-                    } else if viewModel.numberVisible == 1 {
-                        Text("Pick A Card")
-                            .font(.title3)
-                    } else if viewModel.numberVisible != 1 {
-                        Text("Shuffle Cards")
-                            .font(.title3)
-                    }
+        VStack {
+            CardsView(viewModel: viewModel)
+            
+            Button(action: {
+                viewModel.newCard()
+                viewModel.shuffle()
+            }) {
+                if viewModel.numberVisible == 0 {
+                    Text("Pick A Card")
+                        .font(.title3)
+                } else if viewModel.numberVisible == 1 {
+                    Text("Pick A Card")
+                        .font(.title3)
+                } else if viewModel.numberVisible != 1 {
+                    Text("Shuffle Cards")
+                        .font(.title3)
                 }
-//                .padding(EdgeInsets(top: 0, leading: 0, bottom: -5, trailing: 0))
-                .frame(alignment: .bottom)
-                Stepper("Number of Cards: \(viewModel.numberVisible)", value: $viewModel.numberVisible, in: 0...6)
-                    .font(.title3)
-                    .padding(20)
-                    .frame(alignment: .bottom)
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Cards")
+            .frame(alignment: .bottom)
+            Stepper("Number of Cards: \(viewModel.numberVisible)", value: $viewModel.numberVisible, in: 0...6)
+                .font(.title3)
+                .padding(20)
+                .frame(alignment: .bottom)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+            HStack {
+                Toggle("Include Jokers?", isOn: $includeJokers)
+                    .font(.title3)
+                    .padding(EdgeInsets(top: -10, leading: 20, bottom: 10, trailing: 20))
+                    .onChange(of: includeJokers) { value in
+                        if includeJokers == true {
+                            viewModel.addJokers()
+                            viewModel.includeJokers = true
+                        } else {
+                            viewModel.removeJoker()
+                            viewModel.includeJokers = false
+                        }
+                    }
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Cards")
     }
 }
 
