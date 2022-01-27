@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 class CardViewModel: ObservableObject {
+    var includeJokers = false
+    
     var emptyArray: [Card] {
         [Card](shuffledDeck.prefix(numberVisible))
     }
@@ -23,18 +26,14 @@ class CardViewModel: ObservableObject {
             numberVisible = 1
         }
         shuffledDeck = Card.all.shuffled()
-        print(Card.all)
     }
     func addJokers() {
         Card.all.insert(Card(name: "black_joker"), at: 50)
         Card.all.insert(Card(name: "red_joker"), at: 51)
-        print(Card.all)
         print(Card.all.count)
     }
     func removeJoker() {
         Card.all.remove(at: 51)
         Card.all.remove(at: 50)
-        print(Card.all)
-        print(Card.all.count)
     }
 }
