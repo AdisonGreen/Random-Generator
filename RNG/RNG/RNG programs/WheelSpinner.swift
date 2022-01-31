@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct WheelSpinner: View {
-    @State private var userLists = ListsController.shared.userLists.lists.first?.listItems
-    @ObservedObject var userSelection = ListsController.shared.userLists.lists.first!
+    @StateObject var userSelection = ListsController.shared.userLists.lists.first!
     
     var body: some View {
         VStack {
@@ -20,11 +19,6 @@ struct WheelSpinner: View {
             Text(userSelection.listItems.first ?? "There is nothing in this list")
             Spacer()
             Button("Spin") {
-                if userSelection.listItems.first == userLists?.first {
-                    print("It is not changed")
-                } else {
-                    print("It is changed")
-                }
                 
                 userSelection.listItems.shuffle()
             }
