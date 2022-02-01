@@ -31,8 +31,8 @@ struct ListPicker: View {
             }
             Text("You selected \(selection.listName)")
         }
-        .background(.ultraThinMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 20))
+//        .background(.ultraThinMaterial)
+//        .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 }
 

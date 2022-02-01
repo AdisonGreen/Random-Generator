@@ -17,9 +17,9 @@ struct WheelSpinner: View {
             ListPicker(selection: userSelection)
             Spacer()
             Text(userSelection.listItems.first ?? "There is nothing in this list")
+            
             Spacer()
             Button("Spin") {
-                
                 userSelection.listItems.shuffle()
             }
             .foregroundColor(.white)
