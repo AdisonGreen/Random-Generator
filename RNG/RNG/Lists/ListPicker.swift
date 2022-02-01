@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListPicker: View {
-    @State var selection: UserList
+    @Binding var selection: UserList
     
     private let userList = ListsController.shared.userLists
     
@@ -36,8 +36,8 @@ struct ListPicker: View {
     }
 }
 
-struct ListPicker_Previews: PreviewProvider {
-    static var previews: some View {
-        ListPicker(selection: ListsController.shared.userLists.lists.first!)
-    }
-}
+//struct ListPicker_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListPicker(selection: ListsController.shared.userLists.lists.first!)
+//    }
+//}

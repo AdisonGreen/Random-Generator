@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct WheelSpinner: View {
-    @StateObject var userSelection = ListsController.shared.userLists.lists.first!
+    @State private var userSelection = ListsController.shared.userLists.lists.first!
+    @State var randomItem = ListsController.shared.userLists.lists.first!.listItems.first
     
     var body: some View {
+        
         VStack {
             Spacer()
             Spacer()
-            ListPicker(selection: userSelection)
+            ListPicker(selection: $userSelection)
             Spacer()
-            Text(userSelection.listItems.first ?? "There is nothing in this list")
+            Text(randomItem ?? "There is nothing in this list")
             
             Spacer()
             Button("Spin") {
-                userSelection.listItems.shuffle()
+                randomItem = userSelection.listItems.randomElement()
             }
             .foregroundColor(.white)
             .multilineTextAlignment(.center)
