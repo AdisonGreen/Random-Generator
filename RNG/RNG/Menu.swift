@@ -58,7 +58,7 @@ struct Menu: View {
                     HStack {
                         VStack {
                             //Spinner
-                            NavigationLink(destination: Random_Number_Gen()) {
+                            NavigationLink(destination: WheelSpinner()) {
                                 Image("WheelRounded")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -83,7 +83,7 @@ struct Menu: View {
                                 .multilineTextAlignment(.center)
                         }
                         VStack {
-                            //Magic 8Ball
+                            //Add
                             NavigationLink(destination: Random_Number_Gen()) {
                                 Image("ProjectorRounded")
                                     .resizable()
