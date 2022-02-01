@@ -8,15 +8,21 @@
 import SwiftUI
 
 struct WheelSpinner: View {
-    @State private var userLists = ListsController.shared.userLists.lists.first?.listItems
-    @State var userSelection = ListsController.shared.userLists.lists.first
+    @State private var userSelection = ListsController.shared.userLists.lists.first!
+    @State var randomItem = ListsController.shared.userLists.lists.first!.listItems.first
     
     var body: some View {
+        
         VStack {
-            ListPicker(selection: userSelection!)
-            Text(userSelection?.listItems.first ?? "There is noting in this list")
+            Spacer()
+            Spacer()
+            ListPicker(selection: $userSelection)
+            Spacer()
+            Text(randomItem ?? "There is nothing in this list")
+            
+            Spacer()
             Button("Spin") {
-                userSelection?.listItems.shuffle()
+                randomItem = userSelection.listItems.randomElement()
             }
             .foregroundColor(.white)
             .multilineTextAlignment(.center)
@@ -26,9 +32,9 @@ struct WheelSpinner: View {
             .cornerRadius(40)
             .shadow(radius: 3)
             .frame(minWidth: 1, maxWidth: .infinity)
+            Spacer()
+            Spacer()
         }
-        .background(.green)
-        
     }
 }
 
