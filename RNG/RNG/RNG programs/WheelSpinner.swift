@@ -35,6 +35,8 @@ struct WheelSpinner: View {
             Spacer()
             Spacer()
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Wheel Spinner")
     }
 }
 
