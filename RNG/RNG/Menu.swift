@@ -90,7 +90,7 @@ struct Menu: View {
                                     .aspectRatio(contentMode: .fit)
                                     .padding(5)
                             }
-                            Text("d")
+                            Text("Coming soon")
                                 .font(.subheadline)
                                 .fontWeight(.medium)
                                 .multilineTextAlignment(.center)

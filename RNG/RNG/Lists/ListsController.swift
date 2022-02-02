@@ -52,6 +52,6 @@ class ListsController {
     }
 
     private func sampleLists() -> [UserList] {
-        return [UserList(listName: "Colors", listItems: ["Blue", "Red", "Yellow", "Orange", "Pink", "Green", "Black", "White", "Purple", "Brown", "Gray"], newList: false), UserList(listName: "Food", listItems: ["Hamburger", "Pizza"], newList: false)]
+        return [UserList(listName: "Colors", listItems: ["Blue", "Red", "Yellow", "Orange", "Pink", "Green", "Black", "White", "Purple", "Brown", "Gray"], newList: false), UserList(listName: "Food", listItems: ["Hamburger", "Pizza", "Tacos", "Spaghetti", "Ceral"], newList: false)]
     }
 }
