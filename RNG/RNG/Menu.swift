@@ -23,7 +23,7 @@ struct Menu: View {
                                     .aspectRatio(contentMode: .fit)
                                     .padding(5)
                             }
-                            Text("Random Number Generator")
+                            Text("RNG")
                                 .font(.subheadline)
                                 .fontWeight(.medium)
                                 .multilineTextAlignment(.center)
@@ -36,7 +36,7 @@ struct Menu: View {
                                     .aspectRatio(contentMode: .fit)
                                     .padding(5)
                             }
-                            Text("Dice Roller \n")
+                            Text("Dice Roller")
                                 .font(.subheadline)
                                 .fontWeight(.medium)
                                 .multilineTextAlignment(.center)
@@ -49,7 +49,7 @@ struct Menu: View {
                                     .aspectRatio(contentMode: .fit)
                                     .padding(5)
                             }
-                            Text("Card Picker \n")
+                            Text("Card Picker")
                                 .font(.subheadline)
                                 .fontWeight(.medium)
                                 .multilineTextAlignment(.center)
@@ -77,7 +77,7 @@ struct Menu: View {
                                     .aspectRatio(contentMode: .fit)
                                     .padding(5)
                             }
-                            Text("Magic EightBall")
+                            Text("Magic 8Ball")
                                 .font(.subheadline)
                                 .fontWeight(.medium)
                                 .multilineTextAlignment(.center)
