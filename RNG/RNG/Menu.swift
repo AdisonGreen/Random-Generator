@@ -85,12 +85,12 @@ struct Menu: View {
                         VStack {
                             //Magic 8Ball
                             NavigationLink(destination: Random_Number_Gen()) {
-                                Image("ProjectorRounded")
+                                Image("BlankRounded")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .padding(5)
                             }
-                            Text("Advertisement")
+                            Text("d")
                                 .font(.subheadline)
                                 .fontWeight(.medium)
                                 .multilineTextAlignment(.center)
