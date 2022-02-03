@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct WheelSpinner: View {
-    @State private var userSelection = ListsController.shared.userLists.lists.first!
-    @State var randomItem = ListsController.shared.userLists.lists.first!.listItems.first
+    @State private var userSelection = ListsController.shared.userLists.lists.first ?? UserList(listName: "", listItems: ["You have no list selected"], newList: false)
+    @State var randomItem = ListsController.shared.userLists.lists.first?.listItems.first ?? "You have no list selected"
     
     var body: some View {
         
@@ -18,11 +18,11 @@ struct WheelSpinner: View {
             Spacer()
             ListPicker(selection: $userSelection)
             Spacer()
-            Text(randomItem ?? "There is nothing in this list")
+            Text(randomItem)
             
             Spacer()
             Button("Spin") {
-                randomItem = userSelection.listItems.randomElement()
+                randomItem = userSelection.listItems.randomElement() ?? "You have no list selected"
             }
             .foregroundColor(.white)
             .multilineTextAlignment(.center)

@@ -29,7 +29,6 @@ struct ListPicker: View {
                 .pickerStyle(.menu)
                 Spacer()
             }
-            Text("You selected \(selection.listName)")
         }
 //        .background(.ultraThinMaterial)
 //        .clipShape(RoundedRectangle(cornerRadius: 20))
