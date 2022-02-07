@@ -34,24 +34,32 @@ struct drawWheel: InsettableShape {
 }
 
 struct Wheel: View {
-    let myChosenListItems = ["a", "b", "c", "d"]
+    let myChosenListItems = ["a", "b", "c", "d", "e", "f", "g", "1", "2", "3", "4", "5"]
     
     var body: some View {
         ZStack {
             ForEach(myChosenListItems.indices, id: \.self) { item in
-                let sizeOfWheelSlice = 360 / myChosenListItems.count
+                let sizeOfWheelSlice = 360.0 / Double(myChosenListItems.count)
                 
                 let sizeOfPie = Double(sizeOfWheelSlice)
                 let startPoint = Double(sizeOfWheelSlice) * Double(item + 1)
                 let endPoint = sizeOfPie + startPoint
                 
                 drawWheel(startAngle: .degrees(startPoint), endAngle: .degrees(endPoint), clockwise: true)
-                    .foregroundColor(item % 2 == 0 ? .red : .blue)
+                    .foregroundColor(chooseAColor(index: item))
+//                Text(myChosenListItems[item])
             }
         }
     }
     
-    func chooseAColor() {
+    func chooseAColor(index: Int) -> Color {
+        let colorOptions = [Color.blue, Color.red, Color.green, Color.yellow, Color.brown, Color.mint, Color.purple, Color.orange, Color.pink, Color.purple, Color.gray]
+        if index <= 10 {
+            return colorOptions[index]
+        } else {
+            let randomColorIndex = Int.random(in: 0...10)
+            return colorOptions[randomColorIndex]
+        }
         
     }
 }
