@@ -19,9 +19,7 @@ struct WheelSpinner: View {
             ListPicker(selection: $userSelection)
             Spacer()
             Text(randomItem)
-            ForEach(userSelection.listItems, id: \.self) { item in
-                Text(item)
-            }
+//            Wheel(myChosenListItems: userSelection.listItems)
             Spacer()
             Button("Spin") {
                 randomItem = userSelection.listItems.randomElement() ?? "You have no list selected"
