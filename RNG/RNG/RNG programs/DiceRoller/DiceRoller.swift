@@ -8,47 +8,223 @@
 import SwiftUI
 
 struct DiceRoller: View {
+    @State var diceView = DiceView()
     @State var startingImage = Image("DiceSide3")
     @State var total = 0
-    @State var buttonPressed = false
-
+    @State var diceVisible = 1
+    
     var body: some View {
         VStack {
-            startingImage
-                .resizable()
-                .scaledToFit()
-                .padding()
+            ZStack {
+                if diceView.diceVisible == 1 {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 250, maximum: 250))]) {
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                    }
+                }
+                if diceView.diceVisible == 2 {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 170, maximum: 170))]) {
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                    }
+                }
+                if diceView.diceVisible == 3 {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 100, maximum: 100))]) {
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                    }
+                }
+                if diceView.diceVisible == 4 {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 100, maximum: 100))]) {
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                    }
+                }
+                if diceView.diceVisible == 5 {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 100, maximum: 100))]) {
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                    }
+                }
+                if diceView.diceVisible == 6 {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 100, maximum: 100))]) {
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                    }
+                }
+                if diceView.diceVisible == 7 {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 100, maximum: 100))]) {
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                    }
+                }
+                if diceView.diceVisible == 8 {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 100, maximum: 100))]) {
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                    }
+                }
+                if diceView.diceVisible == 9 {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 100, maximum: 100))]) {
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                        startingImage
+                            .resizable()
+                            .scaledToFit()
+                    }
+                }
+                startingImage
+                    .resizable()
+                    .scaledToFit()
+                    .padding()
+                    .opacity(0.0)
+            }
             
             Text("Total: \(total)")
             HStack {
-                Button {
+                Button(action: {
                     random8Dice()
-                    if buttonPressed == false {
-                        buttonPressed = true
-                    }
-                } label: {
+                    diceView.diceVisible += 1
+                }) {
                     Text("8")
                 }
-                Button {
+                Button(action: {
                     random10Dice()
-                } label: {
+                    diceView.diceVisible += 1
+                }) {
                     Text("10")
                 }
-                Button {
+                Button(action: {
                     random12Dice()
-                } label: {
+                    diceView.diceVisible += 1
+                }) {
                     Text("12")
                 }
-                Button {
+                Button(action: {
                     random14Dice()
-                } label: {
+                    diceView.diceVisible += 1
+                }) {
                     Text("14")
                 }
             }
             
-            Button {
+            Button(action: {
                 random6Sided()
-            } label: {
+            }) {
                 Text("Roll Dice")
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
