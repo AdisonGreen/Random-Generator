@@ -15,9 +15,8 @@ struct Wheel: View {
             ForEach(myChosenListItems.indices, id: \.self) { index in
                 let sizeOfWheelSlice = 360.0 / Double(myChosenListItems.count)
                 
-               SliceView(sizeOfWheelSlice: sizeOfWheelSlice, index: index)
-                    .foregroundColor(chooseAColor(index: index))
-                    .frame(width: 400, height: 700)
+                SliceView(sizeOfWheelSlice: sizeOfWheelSlice, index: index, color: chooseAColor(index: index), text: "Some Text")
+                    .frame(width: 400, height: 400)
             }
         }
     }
@@ -35,6 +34,6 @@ struct Wheel: View {
 
 struct Wheel_Previews: PreviewProvider {
     static var previews: some View {
-        Wheel(myChosenListItems: ["1", "2", "3", "4"])
+        Wheel(myChosenListItems: ["1", "2", "3", "4", "5", "1", "2", "3", "4", "5"])
     }
 }
