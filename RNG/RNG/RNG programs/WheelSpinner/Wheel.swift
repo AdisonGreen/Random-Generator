@@ -15,7 +15,7 @@ struct Wheel: View {
             ForEach(myChosenListItems.indices, id: \.self) { index in
                 let sizeOfWheelSlice = 360.0 / Double(myChosenListItems.count)
                 
-                SliceView(sizeOfWheelSlice: sizeOfWheelSlice, index: index, color: chooseAColor(index: index), text: "Some Text")
+                SliceView(sizeOfWheelSlice: sizeOfWheelSlice, index: index, color: chooseAColor(index: index), text: myChosenListItems[index])
                     .frame(width: 400, height: 400)
             }
         }
