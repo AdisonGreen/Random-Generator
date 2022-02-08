@@ -34,7 +34,7 @@ struct drawWheel: InsettableShape {
 }
 
 struct Wheel: View {
-    let myChosenListItems = ["a", "b", "c", "d", "e", "f", "g", "1", "2", "3", "4", "5"]
+    let myChosenListItems = ["1", "2", "3", "4", "5", "6"]
     
     var body: some View {
         ZStack {
@@ -47,7 +47,9 @@ struct Wheel: View {
                 
                 drawWheel(startAngle: .degrees(startPoint), endAngle: .degrees(endPoint), clockwise: true)
                     .foregroundColor(chooseAColor(index: item))
-//                Text(myChosenListItems[item])
+                Text(myChosenListItems[item])
+                    .position(x: 200, y: 200)
+                    .zIndex(1)
             }
         }
     }
