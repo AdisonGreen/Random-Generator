@@ -84,13 +84,13 @@ struct Menu: View {
                         }
                         VStack {
                             //Add
-                            NavigationLink(destination: Random_Number_Gen()) {
-                                Image("BlankRounded")
+                            NavigationLink(destination: Password_Generator()) {
+                                Image("LockRounded")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .padding(5)
                             }
-                            Text("Coming soon")
+                            Text("Password Gen")
                                 .font(.subheadline)
                                 .fontWeight(.medium)
                                 .multilineTextAlignment(.center)
