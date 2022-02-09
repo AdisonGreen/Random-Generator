@@ -34,6 +34,6 @@ struct Wheel: View {
 
 struct Wheel_Previews: PreviewProvider {
     static var previews: some View {
-        Wheel(myChosenListItems: ["1", "2", "3", "4", "5", "1", "2", "3", "4", "5"])
+        Wheel(myChosenListItems: ["1", "2", "3", "4"])
     }
 }

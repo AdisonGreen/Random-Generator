@@ -22,11 +22,11 @@ struct WheelSpinner: View {
             Text(randomItem)
             Wheel(myChosenListItems: userSelection.listItems)
                 .rotationEffect(.degrees(animationAmount))
-                .animation(.easeOut(duration: 2), value: animationAmount)
+                .animation(.easeOut(duration: 3), value: animationAmount)
             Spacer()
             Button("Spin") {
                 randomItem = userSelection.listItems.randomElement() ?? "You have no list selected"
-                animationAmount += 1000
+                animationAmount += 2000
             }
             .foregroundColor(.white)
             .multilineTextAlignment(.center)
