@@ -34,11 +34,11 @@ struct SliceView: View {
                     let height = width
                     
                     path.move(to: CGPoint(x: width * 0.5, y: height * 0.5))
-                    path.addArc(center: .init(x: 200, y: 200), radius: 150, startAngle: modifiedStart, endAngle: modifiedEnd, clockwise: !clockwise)
+                    path.addArc(center: .init(x: width * 0.5, y: height * 0.5), radius: 150, startAngle: modifiedStart, endAngle: modifiedEnd, clockwise: !clockwise)
                 }
                 .fill(color)
                 Text(text)
-                    .rotationEffect(Angle(degrees: (endAngle.degrees + startAngle.degrees) / 2))
+                    .rotationEffect(Angle(degrees: ((endAngle.degrees + startAngle.degrees) / 2) + 90))
                     .position(
                         x: geo.size.width * 0.5 * CGFloat(1.0 + 0.58 * cos(midRadians)),
                         y: geo.size.height * 0.5 * CGFloat(1.0 - 0.58 * sin(midRadians))
