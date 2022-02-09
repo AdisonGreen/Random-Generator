@@ -10,6 +10,7 @@ import SwiftUI
 struct WheelSpinner: View {
     @State private var userSelection = ListsController.shared.userLists.lists.first ?? UserList(listName: "", listItems: ["You have no list selected"], newList: false)
     @State var randomItem = ListsController.shared.userLists.lists.first?.listItems.first ?? "You have no list selected"
+    @State private var animationAmount = 1.0
     
     var body: some View {
         
@@ -20,9 +21,12 @@ struct WheelSpinner: View {
             Spacer()
             Text(randomItem)
             Wheel(myChosenListItems: userSelection.listItems)
+                .rotationEffect(.degrees(animationAmount))
+                .animation(.easeOut(duration: 2), value: animationAmount)
             Spacer()
             Button("Spin") {
                 randomItem = userSelection.listItems.randomElement() ?? "You have no list selected"
+                animationAmount += 1000
             }
             .foregroundColor(.white)
             .multilineTextAlignment(.center)

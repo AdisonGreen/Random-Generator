@@ -42,6 +42,7 @@ struct SliceView: View {
                         x: geo.size.width * 0.5 * CGFloat(1.0 + 0.58 * cos(midRadians)),
                         y: geo.size.height * 0.5 * CGFloat(1.0 - 0.58 * sin(midRadians))
                     )
+                    .rotationEffect(modifiedEnd)
                     .foregroundColor(Color.black)
             }
         }
