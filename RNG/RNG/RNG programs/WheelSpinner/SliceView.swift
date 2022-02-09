@@ -40,8 +40,8 @@ struct SliceView: View {
                 Text(text)
                     .rotationEffect(Angle(degrees: ((endAngle.degrees + startAngle.degrees) / 2) + 90))
                     .position(
-                        x: geo.size.width * 0.5 * CGFloat(1.0 + 0.58 * cos(midRadians)),
-                        y: geo.size.height * 0.5 * CGFloat(1.0 - 0.58 * sin(midRadians))
+                        x: geo.size.width * 0.5 * CGFloat(1.0 + 0.52 * cos(midRadians)),
+                        y: geo.size.height * 0.5 * CGFloat(1.0 - 0.52 * sin(midRadians))
                     )
                     .foregroundColor(Color.black)
             }
