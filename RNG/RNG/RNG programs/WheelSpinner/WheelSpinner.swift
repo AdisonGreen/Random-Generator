@@ -12,26 +12,30 @@ struct WheelSpinner: View {
     @State var randomItem = ListsController.shared.userLists.lists.first?.listItems.first ?? "You have no list selected"
     @State private var animationAmount = 0.0
     
+    @State private var isAnimating = false
+    
     var body: some View {
         VStack {
             Spacer()
             Spacer()
             ListPicker(selection: $userSelection)
-            Spacer()
             Text(randomItem)
-            ZStack {
-                HStack(alignment: .center, spacing: -75) {
-                    WheelArrow()
-                        .zIndex(1)
-                    Wheel(myChosenListItems: userSelection.listItems)
-                        .rotationEffect(.degrees(animationAmount))
-                        .animation(.easeOut(duration: 3), value: animationAmount)
-                }
+            Spacer()
+            VStack(spacing: -70) {
+                WheelArrow()
+                    .zIndex(1)
+                Wheel(myChosenListItems: userSelection.listItems)
+                    .rotationEffect(.degrees(animationAmount))
+                    .animation(.easeOut(duration: 3), value: animationAmount)
             }
             Spacer()
             Button("Spin") {
                 randomItem = userSelection.listItems.randomElement() ?? "You have no list selected"
                 animationAmount += 2000
+//                isAnimating = true
+            }
+            .alert("\(randomItem)", isPresented: $isAnimating) {
+                Button("Ok", role: .cancel) { }
             }
             .foregroundColor(.white)
             .multilineTextAlignment(.center)

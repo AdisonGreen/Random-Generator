@@ -24,7 +24,7 @@ struct WheelArrow: View {
     var body: some View {
         Triangle()
             .fill(.black)
-            .rotationEffect(.degrees(90))
+            .rotationEffect(.degrees(180))
             .frame(width: 50, height: 50)
     }
 }

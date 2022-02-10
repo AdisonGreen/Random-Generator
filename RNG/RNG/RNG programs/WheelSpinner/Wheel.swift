@@ -17,6 +17,7 @@ struct Wheel: View {
                 
                 SliceView(sizeOfWheelSlice: sizeOfWheelSlice, index: index, color: chooseAColor(index: index), text: myChosenListItems[index])
                     .frame(width: 400, height: 400)
+                
             }
         }
     }
