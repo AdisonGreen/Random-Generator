@@ -15,8 +15,7 @@ struct DiceRoller: View {
         VStack {
             ZStack {
                 DiceView(viewModel: viewModel)
-            }
-            
+            }   
 //            Text("Total: \(viewModel.total)")
             HStack {
                 Button(action: {

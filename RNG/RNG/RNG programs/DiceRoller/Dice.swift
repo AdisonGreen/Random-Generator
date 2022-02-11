@@ -17,4 +17,4 @@ struct Dice: Identifiable {
     
     static var all: [Dice] = dice.map { Dice(name: $0)}
 }
-private var dice = ["DiceSideOne", "DiceSideTwo", "DiceSideThree", "DiceSideFour", "DiceSideFive", "DiceSideSix"]
+private var dice = ["DiceSideOne", "DiceSideTwo", "DiceSideThree", "DiceSideFour", "DiceSideFive", "DiceSideSix", "testImage"]
