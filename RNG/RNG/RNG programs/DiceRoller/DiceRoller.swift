@@ -17,34 +17,34 @@ struct DiceRoller: View {
                 DiceView(viewModel: viewModel)
             }
             
-            Text("Total: \(total)")
-            //"8, 10, 12, 14" buttons above the Roll Dice Button
-//            HStack {
-//                Button(action: {
-//                    diceView.random8Dice()
-//                    diceView.diceVisible += 1
-//                }) {
-//                    Text("4")
-//                }
-//                Button(action: {
-//                    diceView.random10Dice()
-//                    diceView.diceVisible += 1
-//                }) {
-//                    Text("8")
-//                }
-//                Button(action: {
-//                    diceView.random12Dice()
-//                    diceView.diceVisible += 1
-//                }) {
-//                    Text("10")
-//                }
-//                Button(action: {
-//                    diceView.random14Dice()
-//                    diceView.diceVisible += 1
-//                }) {
-//                    Text("12")
-//                }
-//            }
+//            Text("Total: \(viewModel.total)")
+            HStack {
+                Button(action: {
+                    viewModel.diceVisible += 1
+                }) {
+                    Text("4")
+                }
+                Button(action: {
+                    viewModel.diceVisible += 1
+                }) {
+                    Text("6")
+                }
+                Button(action: {
+                    viewModel.diceVisible += 1
+                }) {
+                    Text("8")
+                }
+                Button(action: {
+                    viewModel.diceVisible += 1
+                }) {
+                    Text("10")
+                }
+                Button(action: {
+                    viewModel.diceVisible += 1
+                }) {
+                    Text("12")
+                }
+            }
 
             Button(action: {
                 viewModel.newDice()
@@ -65,9 +65,6 @@ struct DiceRoller: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Dice Roller")
-    }
-    func seeIf8IsAvalible() {
-        
     }
 }
 
