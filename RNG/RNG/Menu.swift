@@ -98,7 +98,7 @@ struct Menu: View {
                     }
                     HStack {
                         Button {
-                            print("yessss")
+                            print("A1")
                         } label: {
                             Image("BlankRounded")
                                 .resizable()
@@ -106,7 +106,7 @@ struct Menu: View {
                                 .padding(5)
                         }
                         Button {
-                            print("yessss")
+                            print("A2")
                         } label: {
                             Image("BlankRounded")
                                 .resizable()
@@ -114,7 +114,7 @@ struct Menu: View {
                                 .padding(5)
                         }
                         Button {
-                            print("yessss")
+                            print("A3")
                         } label: {
                             Image("BlankRounded")
                                 .resizable()
@@ -124,7 +124,7 @@ struct Menu: View {
                     }
                     HStack {
                         Button {
-                            print("yessss")
+                            print("B1")
                         } label: {
                             Image("BlankRounded")
                                 .resizable()
@@ -132,7 +132,7 @@ struct Menu: View {
                                 .padding(5)
                         }
                         Button {
-                            print("yessss")
+                            print("B2")
                         } label: {
                             Image("BlankRounded")
                                 .resizable()
@@ -140,7 +140,7 @@ struct Menu: View {
                                 .padding(5)
                         }
                         Button {
-                            print("yessss")
+                            print("B3")
                         } label: {
                             Image("BlankRounded")
                                 .resizable()
