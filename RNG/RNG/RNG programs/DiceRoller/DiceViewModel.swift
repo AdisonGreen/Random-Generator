@@ -19,7 +19,7 @@ class DiceViewModel: ObservableObject {
     
     func newDice() {
         guard diceVisible <= 100 else { return }
-        diceVisible += 1
+        diceVisible += 0
         //diceVisible keeps going up but the layout stops at 6 dice
         print(diceVisible)
     }
