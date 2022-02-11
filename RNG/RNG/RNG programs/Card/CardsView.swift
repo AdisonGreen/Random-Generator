@@ -2,12 +2,10 @@
 //  CardsView.swift
 //  RNG
 //
-//  Created by Matthew on 1/19/22.
+//  Created by Matthew on 1/19/22
 //
 
 import SwiftUI
-
-// ipod 7th gen 5, 6 cards mess it up
 
 struct CardsView: View {
     @ObservedObject var viewModel: CardViewModel

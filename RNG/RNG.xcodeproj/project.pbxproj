@@ -28,6 +28,8 @@
 		C91AC34627AD7C2E00C34EC2 /* Fakery in Frameworks */ = {isa = PBXBuildFile; productRef = C91AC34527AD7C2E00C34EC2 /* Fakery */; };
 		C957EA632788969600676339 /* DiceRoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957EA622788969600676339 /* DiceRoller.swift */; };
 		C95B4A30278C8F7B0024C747 /* Card Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B4A2F278C8F7B0024C747 /* Card Picker.swift */; };
+		C9649EA327B571E3005ACE8A /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9649EA227B571E3005ACE8A /* Dice.swift */; };
+		C9649EA527B5797D005ACE8A /* DiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9649EA427B5797D005ACE8A /* DiceViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		C90B2FC427B2BF6B0071CE13 /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
 		C957EA622788969600676339 /* DiceRoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRoller.swift; sourceTree = "<group>"; };
 		C95B4A2F278C8F7B0024C747 /* Card Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card Picker.swift"; sourceTree = "<group>"; };
+		C9649EA227B571E3005ACE8A /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
+		C9649EA427B5797D005ACE8A /* DiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				C957EA622788969600676339 /* DiceRoller.swift */,
+				C9649EA427B5797D005ACE8A /* DiceViewModel.swift */,
 				C90B2FC427B2BF6B0071CE13 /* DiceView.swift */,
+				C9649EA227B571E3005ACE8A /* Dice.swift */,
 			);
 			path = DiceRoller;
 			sourceTree = "<group>";
@@ -233,8 +239,10 @@
 				C90B2FC527B2BF6B0071CE13 /* DiceView.swift in Sources */,
 				8EF84B652799C17500A2D859 /* EditList.swift in Sources */,
 				8EF84B682799C17500A2D859 /* ListsController.swift in Sources */,
+				C9649EA327B571E3005ACE8A /* Dice.swift in Sources */,
 				B3673929279B0A32003FB3E9 /* CardsView.swift in Sources */,
 				B3673931279EF088003FB3E9 /* ListPicker.swift in Sources */,
+				C9649EA527B5797D005ACE8A /* DiceViewModel.swift in Sources */,
 				8E6F51492784C031000E8BED /* RNGApp.swift in Sources */,
 				B33D3A5D27A2F4C500FE0393 /* TabBarView.swift in Sources */,
 				B367392B279B0A38003FB3E9 /* CardViewModel.swift in Sources */,
