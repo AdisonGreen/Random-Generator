@@ -44,17 +44,12 @@ struct WheelSpinner: View {
                 
                 let degreesOfRotation = Double(randomIndex + 1) * sliceDegrees
                 
-//                let randomDegree = Int.random(in: 0...360)
-//                let randomDegreeInDouble = Double(randomDegree)
-                
-//                let whereWheelWillLand = randomDegreeInDouble / sliceDegrees
-//                let whereWheelWillLandInInt = Int(whereWheelWillLand - 1)
                 randomItem = userSelection.listItems[randomIndex]
                 
                 let randomSpins = [2160.0, 2520.0, 2880.0, 3240.0, 3600.0]
                 let howManySpins = degreesOfRotation + randomSpins.randomElement()!
-                resetWheel = howManySpins
-                animationAmount += (howManySpins - (howManySpins * 2)) + (halfSliceDegrees - (halfSliceDegrees * 2))
+                resetWheel = howManySpins + halfSliceDegrees
+                animationAmount -= howManySpins + sliceDegrees
 //                isAnimating = true
             }
             .alert("\(randomItem)", isPresented: $isAnimating) {
