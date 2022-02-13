@@ -16,6 +16,9 @@ struct WheelSpinner: View {
     @State private var resetAnimationAmount = 0.0
     @State private var resetWheel = 0.0
     
+    @State private var currentPosition = 0.0
+    @State private var animationRotationLength = 0.0
+    
     @State private var isAnimating = false
     
     var body: some View {
@@ -29,16 +32,15 @@ struct WheelSpinner: View {
                 WheelArrow()
                     .zIndex(1)
                 Wheel(myChosenListItems: userSelection.listItems)
-                    .rotationEffect(.degrees(animationAmount))
-                    .animation(.easeOut(duration: 5), value: animationAmount)
-                    .rotationEffect(.degrees(resetAnimationAmount))
+                    .rotationEffect(.degrees(animationRotationLength))
+                    .animation(.easeOut(duration: 5), value: animationRotationLength)
             }
             Spacer()
             Button("Spin") {
-                let sliceDegrees = Double(360 / userSelection.listItems.count)
+                let sliceDegrees = 360.0 / Double(userSelection.listItems.count)
                 let halfSliceDegrees = sliceDegrees / 2.0
                 
-                resetAnimationAmount += (resetWheel + halfSliceDegrees)
+//                resetAnimationAmount += (resetWheel + halfSliceDegrees)
                 
                 let randomIndex = Int.random(in: 0..<userSelection.listItems.count)
                 
@@ -48,8 +50,11 @@ struct WheelSpinner: View {
                 
                 let randomSpins = [2160.0, 2520.0, 2880.0, 3240.0, 3600.0]
                 let howManySpins = degreesOfRotation + randomSpins.randomElement()!
-                resetWheel = howManySpins + halfSliceDegrees
-                animationAmount -= howManySpins + sliceDegrees
+//                resetWheel = howManySpins + halfSliceDegrees
+                let targetRotation = howManySpins + halfSliceDegrees
+                animationRotationLength -= targetRotation - (currentPosition.truncatingRemainder(dividingBy: 360))
+                currentPosition = targetRotation
+                
 //                isAnimating = true
             }
             .alert("\(randomItem)", isPresented: $isAnimating) {
