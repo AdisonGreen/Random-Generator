@@ -10,12 +10,7 @@ import SwiftUI
 struct WheelSpinner: View {
     @State private var userSelection = ListsController.shared.userLists.lists.first ?? UserList(listName: "", listItems: ["You have no list selected"], newList: false)
     @State private var randomItem = ""
-    
-    @State private var animationAmount = 0.0
-    
-    @State private var resetAnimationAmount = 0.0
-    @State private var resetWheel = 0.0
-    
+
     @State private var currentPosition = 0.0
     @State private var animationRotationLength = 0.0
     
@@ -40,8 +35,6 @@ struct WheelSpinner: View {
                 let sliceDegrees = 360.0 / Double(userSelection.listItems.count)
                 let halfSliceDegrees = sliceDegrees / 2.0
                 
-//                resetAnimationAmount += (resetWheel + halfSliceDegrees)
-                
                 let randomIndex = Int.random(in: 0..<userSelection.listItems.count)
                 
                 let degreesOfRotation = Double(randomIndex + 1) * sliceDegrees
@@ -50,8 +43,14 @@ struct WheelSpinner: View {
                 
                 let randomSpins = [2160.0, 2520.0, 2880.0, 3240.0, 3600.0]
                 let howManySpins = degreesOfRotation + randomSpins.randomElement()!
-//                resetWheel = howManySpins + halfSliceDegrees
-                let targetRotation = howManySpins + halfSliceDegrees
+            
+                let startRangeOfSlice = Int(halfSliceDegrees * -1.0) + 1
+                let endRangeOfSlice = Int(halfSliceDegrees) - 1
+                
+                let randomPointOnSlice = Int.random(in: startRangeOfSlice...endRangeOfSlice)
+                let randomPointInDouble = Double(randomPointOnSlice)
+
+                let targetRotation = howManySpins + halfSliceDegrees + randomPointInDouble
                 animationRotationLength -= targetRotation - (currentPosition.truncatingRemainder(dividingBy: 360))
                 currentPosition = targetRotation
                 
