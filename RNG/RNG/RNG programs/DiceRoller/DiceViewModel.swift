@@ -10,24 +10,20 @@ import SwiftUI
 
 class DiceViewModel: ObservableObject {
     var total = 0
+    @Published var diceArray: [Dice] = []
     
-    var diceArray: [Dice] {
-        [Dice](shuffledDice.prefix(diceVisible))
+    func addDice(of diceType: DiceType) {
+        let newDice = diceType.diceOptions.shuffled()[0]
+        diceArray.append(newDice)
     }
-    var shuffledDice = Dice.all.shuffled()
-    @Published var diceVisible = 0
-    
-    func newDice() {
-        guard diceVisible <= 100 else { return }
-        diceVisible += 0
-        //diceVisible keeps going up but the layout stops at 6 dice
-        print(diceVisible)
+    func reRollAllDice() {
+        diceArray = diceArray.map({ dice in
+            var newDice = dice
+            newDice.reRoll()
+            return newDice
+        })
     }
-    func shuffle() {
-        if diceVisible == 0 {
-            diceVisible = 1
-        }
-        shuffledDice = Dice.all.shuffled()
+    var diceVisible: Int {
+        diceArray.count
     }
-    
 }

@@ -11,6 +11,15 @@ import SwiftUI
 struct DiceView: View {
     @ObservedObject var viewModel: DiceViewModel
     var startingImage = Image("DiceSideOne")
+    var gridItemSize: CGFloat {
+        if viewModel.diceVisible == 1 {
+            return 200
+        } else if viewModel.diceVisible == 2 {
+            return 160
+        } else {
+            return 100
+        }
+    }
     
     var body: some View {
         ZStack {
@@ -19,32 +28,13 @@ struct DiceView: View {
                 .scaledToFit()
                 .opacity(0.0)
             
-            if viewModel.diceVisible == 1 {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 200, maximum: 200))]) {
-                    ForEach(viewModel.diceArray) { dice in
-                        dice.image1
-                            .resizable()
-                            .scaledToFit()
-                            .padding()
-                    }
-                }
-            } else if viewModel.diceVisible == 2 {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 160, maximum: 160))]) {
-                    ForEach(viewModel.diceArray) { dice in
-                        dice.image1
-                            .resizable()
-                            .scaledToFit()
-                            .padding()
-                    }
-                }
-            } else {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100, maximum: 100))]) {
-                    ForEach(viewModel.diceArray) { dice in
-                        dice.image1
-                            .resizable()
-                            .scaledToFit()
-                            .padding()
-                    }
+            
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: gridItemSize, maximum: gridItemSize))]) {
+                ForEach(viewModel.diceArray) { dice in
+                    dice.image1
+                        .resizable()
+                        .scaledToFit()
+                        .padding()
                 }
             }
         }

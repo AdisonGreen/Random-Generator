@@ -18,37 +18,19 @@ struct DiceRoller: View {
             }   
 //            Text("Total: \(viewModel.total)")
             HStack {
-                Button(action: {
-                    viewModel.diceVisible += 1
-                }) {
-                    Text("4")
-                }
-                Button(action: {
-                    viewModel.diceVisible += 1
-                }) {
-                    Text("6")
-                }
-                Button(action: {
-                    viewModel.diceVisible += 1
-                }) {
-                    Text("8")
-                }
-                Button(action: {
-                    viewModel.diceVisible += 1
-                }) {
-                    Text("10")
-                }
-                Button(action: {
-                    viewModel.diceVisible += 1
-                }) {
-                    Text("12")
+                ForEach(DiceType.allCases) { dicetype in
+                    
+                    Button {
+                        viewModel.addDice(of: dicetype)
+                    } label: {
+                        Text(dicetype.rawValue)
+                    }
+
                 }
             }
 
             Button(action: {
-                viewModel.newDice()
-                viewModel.shuffle()
-                //NEED TO MAKE IT SO THAT IT ROLL ANY OF THESE DEPENDING ON IF THEY ADDED IT OR NOT
+                viewModel.reRollAllDice()
             }) {
                 Text("Roll Dice")
                     .foregroundColor(.white)
