@@ -64,7 +64,9 @@ struct WheelSpinner: View {
             }
             .disabled(disabled)
             .alert("\(randomItem)", isPresented: $isAnimating) {
-                Button("Ok", role: .cancel) { }
+                Button("Ok", role: .cancel) {
+                    disabled = false
+                }
             }
             .foregroundColor(.white)
             .multilineTextAlignment(.center)
@@ -84,7 +86,6 @@ struct WheelSpinner: View {
     func delayAlert() {
         DispatchQueue.main.asyncAfter(deadline: .now() + howLongToSpin - 0.1) {
             isAnimating = true
-            disabled = false
         }
     }
 }
