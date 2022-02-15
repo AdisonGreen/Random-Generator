@@ -94,7 +94,8 @@ struct Password_Generator: View {
             VStack {
                 Slider(value: $SliderValue, in: 1...100, step: 1)
                     .accentColor(.green)
-                Text("Current Slider Value: \(SliderValue)")
+                    .padding()
+                Text("Current Slider Value: \(Int(SliderValue))")
                 
                 Button {
                     generatePassword()
