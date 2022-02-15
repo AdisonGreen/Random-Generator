@@ -16,22 +16,27 @@ struct WheelSpinner: View {
     
     @State private var isAnimating = false
     
+    let howLongToSpin = 7.0
+    
+    @State private var disabled = false
+    
     var body: some View {
         VStack {
             Spacer()
             Spacer()
             ListPicker(selection: $userSelection)
-            Text(randomItem)
             Spacer()
             VStack(spacing: -70) {
                 WheelArrow()
                     .zIndex(1)
                 Wheel(myChosenListItems: userSelection.listItems)
                     .rotationEffect(.degrees(animationRotationLength))
-                    .animation(.easeOut(duration: 5), value: animationRotationLength)
+                    .animation(.easeOut(duration: howLongToSpin), value: animationRotationLength)
             }
             Spacer()
             Button("Spin") {
+                disabled = true
+                
                 let sliceDegrees = 360.0 / Double(userSelection.listItems.count)
                 let halfSliceDegrees = sliceDegrees / 2.0
                 
@@ -54,8 +59,9 @@ struct WheelSpinner: View {
                 animationRotationLength -= targetRotation - (currentPosition.truncatingRemainder(dividingBy: 360))
                 currentPosition = targetRotation
                 
-//                isAnimating = true
+                delayAlert()
             }
+            .disabled(disabled)
             .alert("\(randomItem)", isPresented: $isAnimating) {
                 Button("Ok", role: .cancel) { }
             }
@@ -72,6 +78,13 @@ struct WheelSpinner: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Wheel Spinner")
+    }
+    
+    func delayAlert() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + howLongToSpin - 0.1) {
+            isAnimating = true
+            disabled = false
+        }
     }
 }
 
