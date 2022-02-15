@@ -41,8 +41,6 @@ struct DiceView: View {
     }
 }
 
-
-
 struct DiceView_Previews: PreviewProvider {
     static var previews: some View {
         DiceView(viewModel: DiceViewModel())
