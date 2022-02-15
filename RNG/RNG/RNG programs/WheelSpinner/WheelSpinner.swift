@@ -25,6 +25,7 @@ struct WheelSpinner: View {
             Spacer()
             Spacer()
             ListPicker(selection: $userSelection)
+                .disabled(disabled)
             Spacer()
             VStack(spacing: -70) {
                 WheelArrow()
@@ -63,13 +64,15 @@ struct WheelSpinner: View {
             }
             .disabled(disabled)
             .alert("\(randomItem)", isPresented: $isAnimating) {
-                Button("Ok", role: .cancel) { }
+                Button("Ok", role: .cancel) {
+                    disabled = false
+                }
             }
             .foregroundColor(.white)
             .multilineTextAlignment(.center)
             .padding()
             .font(.title)
-            .background(Color.seafoam)
+            .background(disabled ? .gray : Color.seafoam)
             .cornerRadius(40)
             .shadow(radius: 3)
             .frame(minWidth: 1, maxWidth: .infinity)
@@ -83,7 +86,6 @@ struct WheelSpinner: View {
     func delayAlert() {
         DispatchQueue.main.asyncAfter(deadline: .now() + howLongToSpin - 0.1) {
             isAnimating = true
-            disabled = false
         }
     }
 }

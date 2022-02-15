@@ -38,12 +38,14 @@ struct SliceView: View {
                 }
                 .fill(color)
                 Text(text)
+                    .frame(width: 110, height: 110)
                     .rotationEffect(Angle(degrees: ((endAngle.degrees + startAngle.degrees) / 2) + 90))
                     .position(
-                        x: geo.size.width * 0.5 * CGFloat(1.0 + 0.52 * cos(midRadians)),
-                        y: geo.size.height * 0.5 * CGFloat(1.0 - 0.52 * sin(midRadians))
+                        x: geo.size.width * 0.5 * CGFloat(1.0 + 0.5 * cos(midRadians)),
+                        y: geo.size.height * 0.5 * CGFloat(1.0 - 0.5 * sin(midRadians))
                     )
                     .foregroundColor(Color.black)
+                    .lineLimit(1)
             }
         }
     }
