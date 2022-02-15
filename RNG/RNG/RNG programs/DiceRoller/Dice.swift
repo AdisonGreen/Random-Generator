@@ -38,7 +38,7 @@ enum DiceType: String, CaseIterable, Identifiable {
     var diceOptionNames: [String] {
         switch self {
         case .four:
-            return []
+            return ["testImage"]
         case .six:
             return ["DiceSideOne", "DiceSideTwo", "DiceSideThree", "DiceSideFour", "DiceSideFive", "DiceSideSix"]
         case .eight:

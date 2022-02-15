@@ -10,13 +10,16 @@ import SwiftUI
 struct DiceRoller: View {
     @ObservedObject var viewModel = DiceViewModel()
     @State var total = 0
-
+    
     var body: some View {
         VStack {
             ZStack {
-                DiceView(viewModel: viewModel)
-            }   
-//            Text("Total: \(viewModel.total)")
+                ScrollView {
+                    DiceView(viewModel: viewModel)
+                }
+            }
+            
+            Text("Total: \(viewModel.total)")
             HStack {
                 ForEach(DiceType.allCases) { dicetype in
                     
@@ -25,10 +28,10 @@ struct DiceRoller: View {
                     } label: {
                         Text(dicetype.rawValue)
                     }
-
+                    
                 }
             }
-
+            
             Button(action: {
                 viewModel.reRollAllDice()
             }) {
@@ -42,7 +45,7 @@ struct DiceRoller: View {
                     .shadow(radius: 3)
                     .frame(minWidth: 1, maxWidth: .infinity)
             }
-            .frame(alignment: .bottom)
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Dice Roller")
