@@ -25,6 +25,7 @@ struct WheelSpinner: View {
             Spacer()
             Spacer()
             ListPicker(selection: $userSelection)
+                .disabled(disabled)
             Spacer()
             VStack(spacing: -70) {
                 WheelArrow()
@@ -69,7 +70,7 @@ struct WheelSpinner: View {
             .multilineTextAlignment(.center)
             .padding()
             .font(.title)
-            .background(Color.seafoam)
+            .background(disabled ? .gray : Color.seafoam)
             .cornerRadius(40)
             .shadow(radius: 3)
             .frame(minWidth: 1, maxWidth: .infinity)
