@@ -16,6 +16,10 @@ class DiceViewModel: ObservableObject {
         let newDice = diceType.diceOptions.shuffled()[0]
         diceArray.append(newDice)
     }
+    func removeDice(of diceType: DiceType) {
+//        let removingDice = diceType.diceOptions.shuffled()
+        
+    }
     func reRollAllDice() {
         diceArray = diceArray.map({ dice in
             var newDice = dice
