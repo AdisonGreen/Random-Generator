@@ -95,10 +95,18 @@ struct Menu: View {
                                 .fontWeight(.medium)
                                 .multilineTextAlignment(.center)
                         }
+                        
                     }
                 }
             } //scrollView Closing bracket
                 .navigationTitle("Random Generators")
+                .toolbar {
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: MainPageSettings()) {
+                            Image(systemName: "person.3")
+                        }
+                    }
+                }
         } //nav view closing bracket
     }
 }
