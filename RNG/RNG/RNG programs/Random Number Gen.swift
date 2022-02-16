@@ -17,9 +17,13 @@ struct Random_Number_Gen: View {
     
     let howManyNumbersToAnimate = 50
     
-    @State private var howLongToWaitToAnimate = 0.01
+    @State private var howLongToWaitToAnimate = 0.0
     
     @State private var isColorGray = false
+    
+    @State private var canNotPressButton = false
+    
+    @State private var animateNumber = false
     
     var body: some View {
         VStack {
@@ -28,6 +32,8 @@ struct Random_Number_Gen: View {
             Text("\(randomNum)")
                 .font(.largeTitle)
                 .foregroundColor(isColorGray ? .gray : .black)
+                .scaleEffect(animateNumber ? 1.2 : 1.0)
+                .animation(.interpolatingSpring(stiffness: 250, damping: 5, initialVelocity: 10), value: animateNumber)
             Spacer()
             Spacer()
             
@@ -51,6 +57,7 @@ struct Random_Number_Gen: View {
             .clipShape(RoundedRectangle(cornerRadius: 10))
             
             Button("Generate") {
+                canNotPressButton = true
                 guard let minnTextField = minTextField else {
                     minTextField = 1
                     return
@@ -64,17 +71,22 @@ struct Random_Number_Gen: View {
                 if minnTextField > maxxTextField {
                     minTextField = maxTextField
                 } else {
+                    isColorGray = true
                     for _ in 0...howManyNumbersToAnimate {
                         DispatchQueue.main.asyncAfter(deadline: .now() + howLongToWaitToAnimate) {
-                            isColorGray = true
                             randomNum = Int.random(in: minnTextField...maxxTextField)
                         }
                         howLongToWaitToAnimate += 0.017
                     }
-                    isColorGray = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + howLongToWaitToAnimate) {
+                        animate(howLongToWait: .now() + 0.1)
+                        isColorGray = false
+                        canNotPressButton = false
+                    }
                     howLongToWaitToAnimate = 0.0
                 }
             }
+            .disabled(canNotPressButton)
             .foregroundColor(.white)
             .multilineTextAlignment(.center)
             .padding()
@@ -96,6 +108,14 @@ struct Random_Number_Gen: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Random Number Generator")
+    }
+    
+    func animate(howLongToWait: DispatchTime) {
+        animateNumber = true
+        
+        DispatchQueue.main.asyncAfter(deadline: howLongToWait + 0.1) {
+            animateNumber = false
+        }
     }
 }
 

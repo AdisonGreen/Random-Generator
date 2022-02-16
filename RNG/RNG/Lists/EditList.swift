@@ -55,6 +55,7 @@ struct EditList: View {
             }
         }
     }
+    
     func delete(at offsets: IndexSet) {
         listChosen.listItems.remove(atOffsets: offsets)
         userLists.objectWillChange.send()
