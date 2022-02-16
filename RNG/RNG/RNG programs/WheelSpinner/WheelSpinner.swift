@@ -36,6 +36,8 @@ struct WheelSpinner: View {
             }
             Spacer()
             Button("Spin") {
+                let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                impactMed.impactOccurred()
                 disabled = true
                 
                 let sliceDegrees = 360.0 / Double(userSelection.listItems.count)

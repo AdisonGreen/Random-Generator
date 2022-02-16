@@ -17,6 +17,8 @@ struct Card_Picker: View {
             Button(action: {
                 viewModel.newCard()
                 viewModel.shuffle()
+                let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                impactMed.impactOccurred()
             }) {
                 if viewModel.numberVisible == 0 {
                     Text("Pick A Card")

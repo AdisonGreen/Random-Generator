@@ -87,6 +87,8 @@ struct EightBall: View {
             
             Button {
                 AskAway()
+                let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                impactMed.impactOccurred()
             } label: {
                 Text("Ask Away!")
                     .foregroundColor(.white)
@@ -103,6 +105,7 @@ struct EightBall: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Magic 8 Ball")
     }
+   
 }
 
 struct EightBall_Previews: PreviewProvider {

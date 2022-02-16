@@ -99,6 +99,8 @@ struct Password_Generator: View {
                 
                 Button {
                     generatePassword()
+                    let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                    impactMed.impactOccurred()
                 } label: {
                     Text("Generate")
                         .foregroundColor(.white)
