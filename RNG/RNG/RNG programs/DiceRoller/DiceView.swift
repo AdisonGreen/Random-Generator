@@ -29,7 +29,6 @@ struct DiceView: View {
                 .scaledToFit()
                 .opacity(0.0)
             
-            
             LazyVGrid(columns: [GridItem(.adaptive(minimum: gridItemSize, maximum: gridItemSize))]) {
                 ForEach(viewModel.diceArray) { dice in
                     dice.image1
