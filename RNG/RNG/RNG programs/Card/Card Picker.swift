@@ -20,15 +20,38 @@ struct Card_Picker: View {
             }) {
                 if viewModel.numberVisible == 0 {
                     Text("Pick A Card")
-                        .font(.title3)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .font(.title)
+                        .background(Color.seafoam)
+                        .cornerRadius(40)
+                        .shadow(radius: 3)
+                        .frame(minWidth: 1, maxWidth: .infinity)
+                    
                 } else if viewModel.numberVisible == 1 {
                     Text("Pick A Card")
-                        .font(.title3)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .font(.title)
+                        .background(Color.seafoam)
+                        .cornerRadius(40)
+                        .shadow(radius: 3)
+                        .frame(minWidth: 1, maxWidth: .infinity)
                 } else if viewModel.numberVisible != 1 {
                     Text("Shuffle Cards")
-                        .font(.title3)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .font(.title)
+                        .background(Color.seafoam)
+                        .cornerRadius(40)
+                        .shadow(radius: 3)
+                        .frame(minWidth: 1, maxWidth: .infinity)
                 }
             }
+            
             .frame(alignment: .bottom)
             Stepper("Number of Cards: \(viewModel.numberVisible)", value: $viewModel.numberVisible, in: 0...6)
                 .font(.title3)
