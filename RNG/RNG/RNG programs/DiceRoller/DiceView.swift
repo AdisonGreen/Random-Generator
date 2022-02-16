@@ -10,7 +10,7 @@ import SwiftUI
 
 struct DiceView: View {
     @ObservedObject var viewModel: DiceViewModel
-    var startingImage = Image("DiceSideOne")
+    var startingImage = Image("DotDiceSixSideOne")
     var gridItemSize: CGFloat {
         if viewModel.diceVisible == 1 {
             return 200
@@ -22,6 +22,7 @@ struct DiceView: View {
     }
     
     var body: some View {
+        //constrant assist
         ZStack {
             startingImage
                 .resizable()
