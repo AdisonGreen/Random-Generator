@@ -13,7 +13,8 @@ class DiceViewModel: ObservableObject {
     @Published var diceArray: [Dice] = []
     
     func addDice(of diceType: DiceType) {
-        let newDice = diceType.diceOptions.shuffled()[0]
+        let newDice = diceType.diceOptions.randomElement()!
+//        let newDice = diceType.diceOptions.shuffled()[0]
         diceArray.append(newDice)
     }
     func reRollAllDice() {
