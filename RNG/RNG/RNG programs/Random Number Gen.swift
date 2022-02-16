@@ -15,12 +15,19 @@ struct Random_Number_Gen: View {
     
     @FocusState private var amountIsFocused: Bool
     
+    let howManyNumbersToAnimate = 50
+    
+    @State private var howLongToWaitToAnimate = 0.01
+    
+    @State private var isColorGray = false
+    
     var body: some View {
         VStack {
             Spacer()
             Spacer()
             Text("\(randomNum)")
                 .font(.largeTitle)
+                .foregroundColor(isColorGray ? .gray : .black)
             Spacer()
             Spacer()
             
@@ -57,7 +64,15 @@ struct Random_Number_Gen: View {
                 if minnTextField > maxxTextField {
                     minTextField = maxTextField
                 } else {
-                    randomNum = Int.random(in: minnTextField...maxxTextField)
+                    for _ in 0...howManyNumbersToAnimate {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + howLongToWaitToAnimate) {
+                            isColorGray = true
+                            randomNum = Int.random(in: minnTextField...maxxTextField)
+                        }
+                        howLongToWaitToAnimate += 0.017
+                    }
+                    isColorGray = false
+                    howLongToWaitToAnimate = 0.0
                 }
             }
             .foregroundColor(.white)
@@ -83,8 +98,6 @@ struct Random_Number_Gen: View {
         .navigationTitle("Random Number Generator")
     }
 }
-
-
 
 struct Random_Number_Gen_Previews: PreviewProvider {
     static var previews: some View {
