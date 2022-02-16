@@ -95,62 +95,18 @@ struct Menu: View {
                                 .fontWeight(.medium)
                                 .multilineTextAlignment(.center)
                         }
-                    }
-                    HStack {
-                        Button {
-                            print("A1")
-                        } label: {
-                            Image("BlankRounded")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(5)
-                        }
-                        Button {
-                            print("A2")
-                        } label: {
-                            Image("BlankRounded")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(5)
-                        }
-                        Button {
-                            print("A3")
-                        } label: {
-                            Image("BlankRounded")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(5)
-                        }
-                    }
-                    HStack {
-                        Button {
-                            print("B1")
-                        } label: {
-                            Image("BlankRounded")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(5)
-                        }
-                        Button {
-                            print("B2")
-                        } label: {
-                            Image("BlankRounded")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(5)
-                        }
-                        Button {
-                            print("B3")
-                        } label: {
-                            Image("BlankRounded")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(5)
-                        }
+                        
                     }
                 }
             } //scrollView Closing bracket
                 .navigationTitle("Random Generators")
+                .toolbar {
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: MainPageSettings()) {
+                            Image(systemName: "person.3")
+                        }
+                    }
+                }
         } //nav view closing bracket
     }
 }
