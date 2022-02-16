@@ -27,6 +27,7 @@ struct Random_Number_Gen: View {
     
     var body: some View {
         VStack {
+            
             Spacer()
             Spacer()
             Text("\(randomNum)")
@@ -35,7 +36,8 @@ struct Random_Number_Gen: View {
                 .foregroundColor(isColorGray ? .gray : .black)
                 .scaleEffect(animateNumber ? 1.2 : 1.0)
                 .animation(.interpolatingSpring(stiffness: 250, damping: 5, initialVelocity: 10), value: animateNumber)
-                
+             
+            
             Spacer()
             Spacer()
             
