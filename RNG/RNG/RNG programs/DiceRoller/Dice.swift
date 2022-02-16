@@ -38,15 +38,15 @@ enum DiceType: String, CaseIterable, Identifiable {
     var diceOptionNames: [String] {
         switch self {
         case .four:
-            return ["testImage"]
+            return ["PlaceholderDiceFourSideOne", "PlaceholderDiceFourSideTwo", "PlaceholderDiceFourSideThree", "PlaceholderDiceFourSideFour"]
         case .six:
-            return ["DiceSideOne", "DiceSideTwo", "DiceSideThree", "DiceSideFour", "DiceSideFive", "DiceSideSix"]
+            return ["DotDiceSixSideOne", "DotDiceSixSideTwo", "DotDiceSixSideThree", "DotDiceSixSideFour", "DotDiceSixSideFive", "DotDiceSixSideSix"]
         case .eight:
-            return []
+            return ["PlaceholderDiceEightSideOne", "PlaceholderDiceEightSideTwo", "PlaceholderDiceEightSideThree", "PlaceholderDiceEightSideFour", "PlaceholderDiceEightSideFive", "PlaceholderDiceEightSideSix", "PlaceholderDiceEightSideSeven", "PlaceholderDiceEightSideEight"]
         case .ten:
-            return []
+            return ["PlaceholderDiceTenSideOne", "PlaceholderDiceTenSideTwo", "PlaceholderDiceTenSideThree", "PlaceholderDiceTenSideFour", "PlaceholderDiceTenSideFive", "PlaceholderDiceTenSideSix", "PlaceholderDiceTenSideSeven", "PlaceholderDiceTenSideEight", "PlaceholderDiceTenSideNine", "PlaceholderDiceTenSideTen", ]
         case .twelve:
-            return []
+            return ["PlaceholderDiceTwelveSideOne", "PlaceholderDiceTwelveSideTwo", "PlaceholderDiceTwelveSideThree", "PlaceholderDiceTwelveSideFour", "PlaceholderDiceTwelveSideFive", "PlaceholderDiceTwelveSideSix", "PlaceholderDiceTwelveSideSeven", "PlaceholderDiceTwelveSideEight", "PlaceholderDiceTwelveSideNine", "PlaceholderDiceTwelveSideTen", "PlaceholderDiceTwelveSideEleven", "PlaceholderDiceTwelveSideTwelve", ]
         }
     }
     var diceOptions: [Dice] {
