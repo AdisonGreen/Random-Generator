@@ -96,58 +96,58 @@ struct Menu: View {
                                 .multilineTextAlignment(.center)
                         }
                     }
-                    HStack {
-                        Button {
-                            print("A1")
-                        } label: {
-                            Image("BlankRounded")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(5)
-                        }
-                        Button {
-                            print("A2")
-                        } label: {
-                            Image("BlankRounded")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(5)
-                        }
-                        Button {
-                            print("A3")
-                        } label: {
-                            Image("BlankRounded")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(5)
-                        }
-                    }
-                    HStack {
-                        Button {
-                            print("B1")
-                        } label: {
-                            Image("BlankRounded")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(5)
-                        }
-                        Button {
-                            print("B2")
-                        } label: {
-                            Image("BlankRounded")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(5)
-                        }
-                        Button {
-                            print("B3")
-                        } label: {
-                            Image("BlankRounded")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(5)
-                        }
-                    }
+//                    HStack {
+//                        Button {
+//                            print("A1")
+//                        } label: {
+//                            Image("BlankRounded")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .padding(5)
+//                        }
+//                        Button {
+//                            print("A2")
+//                        } label: {
+//                            Image("BlankRounded")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .padding(5)
+//                        }
+//                        Button {
+//                            print("A3")
+//                        } label: {
+//                            Image("BlankRounded")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .padding(5)
+//                        }
+//                    }
+//                    HStack {
+//                        Button {
+//                            print("B1")
+//                        } label: {
+//                            Image("BlankRounded")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .padding(5)
+//                        }
+//                        Button {
+//                            print("B2")
+//                        } label: {
+//                            Image("BlankRounded")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .padding(5)
+//                        }
+//                        Button {
+//                            print("B3")
+//                        } label: {
+//                            Image("BlankRounded")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .padding(5)
+//                        }
+//                    }
                 }
             } //scrollView Closing bracket
                 .navigationTitle("Random Generators")
