@@ -84,13 +84,13 @@ struct Menu: View {
                         }
                         VStack {
                             //Add
-                            NavigationLink(destination: Random_Number_Gen()) {
-                                Image("BlankRounded")
+                            NavigationLink(destination: Password_Generator()) {
+                                Image("LockRounded")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .padding(5)
                             }
-                            Text("Coming soon")
+                            Text("Password Gen")
                                 .font(.subheadline)
                                 .fontWeight(.medium)
                                 .multilineTextAlignment(.center)
@@ -98,7 +98,7 @@ struct Menu: View {
                     }
                     HStack {
                         Button {
-                            print("yessss")
+                            print("A1")
                         } label: {
                             Image("BlankRounded")
                                 .resizable()
@@ -106,7 +106,7 @@ struct Menu: View {
                                 .padding(5)
                         }
                         Button {
-                            print("yessss")
+                            print("A2")
                         } label: {
                             Image("BlankRounded")
                                 .resizable()
@@ -114,7 +114,7 @@ struct Menu: View {
                                 .padding(5)
                         }
                         Button {
-                            print("yessss")
+                            print("A3")
                         } label: {
                             Image("BlankRounded")
                                 .resizable()
@@ -124,7 +124,7 @@ struct Menu: View {
                     }
                     HStack {
                         Button {
-                            print("yessss")
+                            print("B1")
                         } label: {
                             Image("BlankRounded")
                                 .resizable()
@@ -132,7 +132,7 @@ struct Menu: View {
                                 .padding(5)
                         }
                         Button {
-                            print("yessss")
+                            print("B2")
                         } label: {
                             Image("BlankRounded")
                                 .resizable()
@@ -140,7 +140,7 @@ struct Menu: View {
                                 .padding(5)
                         }
                         Button {
-                            print("yessss")
+                            print("B3")
                         } label: {
                             Image("BlankRounded")
                                 .resizable()
