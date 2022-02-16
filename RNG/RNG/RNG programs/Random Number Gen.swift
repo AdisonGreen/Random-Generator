@@ -30,10 +30,12 @@ struct Random_Number_Gen: View {
             Spacer()
             Spacer()
             Text("\(randomNum)")
+                .animation(nil)
                 .font(.largeTitle)
                 .foregroundColor(isColorGray ? .gray : .black)
                 .scaleEffect(animateNumber ? 1.2 : 1.0)
                 .animation(.interpolatingSpring(stiffness: 250, damping: 5, initialVelocity: 10), value: animateNumber)
+                
             Spacer()
             Spacer()
             
