@@ -37,6 +37,8 @@ struct DiceRoller: View {
             
             Button(action: {
                 viewModel.reRollAllDice()
+                let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                impactMed.impactOccurred()
             }) {
                 Text("Roll Dice")
                     .foregroundColor(.white)
