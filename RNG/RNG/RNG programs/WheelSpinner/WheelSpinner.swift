@@ -48,8 +48,8 @@ struct WheelSpinner: View {
                 let degreesOfRotation = Double(randomIndex + 1) * sliceDegrees
                 
                 randomItem = userSelection.listItems[randomIndex]
-                
-                let randomSpins = [2160.0, 2520.0, 2880.0, 3240.0, 3600.0]
+
+                let randomSpins = [3960.0, 4320.0, 4680.0, 5040.0, 5400.0]
                 let howManySpins = degreesOfRotation + randomSpins.randomElement()!
             
                 let startRangeOfSlice = Int(halfSliceDegrees * -1.0) + 1
