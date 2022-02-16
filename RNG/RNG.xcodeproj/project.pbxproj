@@ -30,7 +30,6 @@
 		B3D135BA2788891600C6264D /* Random Number Gen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D135B92788891600C6264D /* Random Number Gen.swift */; };
 		C909C2FB27BD51A500A6414D /* MainPageSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909C2FA27BD51A500A6414D /* MainPageSettings.swift */; };
 		C90B2FC527B2BF6B0071CE13 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90B2FC427B2BF6B0071CE13 /* DiceView.swift */; };
-		C91AC34627AD7C2E00C34EC2 /* Fakery in Frameworks */ = {isa = PBXBuildFile; productRef = C91AC34527AD7C2E00C34EC2 /* Fakery */; };
 		C957EA632788969600676339 /* DiceRoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957EA622788969600676339 /* DiceRoller.swift */; };
 		C95B4A30278C8F7B0024C747 /* Card Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B4A2F278C8F7B0024C747 /* Card Picker.swift */; };
 		C9649EA327B571E3005ACE8A /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9649EA227B571E3005ACE8A /* Dice.swift */; };
@@ -73,7 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C91AC34627AD7C2E00C34EC2 /* Fakery in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +193,6 @@
 			);
 			name = RNG;
 			packageProductDependencies = (
-				C91AC34527AD7C2E00C34EC2 /* Fakery */,
 			);
 			productName = RNG;
 			productReference = 8E6F51452784C031000E8BED /* RNG.app */;
@@ -226,7 +223,6 @@
 			);
 			mainGroup = 8E6F513C2784C030000E8BED;
 			packageReferences = (
-				C91AC34427AD7C2E00C34EC2 /* XCRemoteSwiftPackageReference "Fakery" */,
 			);
 			productRefGroup = 8E6F51462784C031000E8BED /* Products */;
 			projectDirPath = "";
@@ -493,25 +489,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		C91AC34427AD7C2E00C34EC2 /* XCRemoteSwiftPackageReference "Fakery" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/vadymmarkov/Fakery";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		C91AC34527AD7C2E00C34EC2 /* Fakery */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C91AC34427AD7C2E00C34EC2 /* XCRemoteSwiftPackageReference "Fakery" */;
-			productName = Fakery;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8E6F513D2784C030000E8BED /* Project object */;
 }
