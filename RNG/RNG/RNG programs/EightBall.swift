@@ -35,6 +35,7 @@ enum EightBallAnswers: CaseIterable {
 
 struct EightBall: View {
     @State var EightBallAnswer: String = "Welcome!"
+    @State var opacity = 1.0
     
     func AskAway() {
         let randomEightBallAnswer = EightBallAnswers.allCases.randomElement()!
@@ -76,16 +77,25 @@ struct EightBall: View {
                     .scaledToFit()
                     .aspectRatio(0.6, contentMode: .fit)
                 Text(EightBallAnswer)
+                    .opacity(opacity)
+                    .animation(.easeOut(duration: 0.5), value: opacity)
                     .multilineTextAlignment(.center)
                     .padding(EdgeInsets(top: 0, leading: 150, bottom: 0, trailing: 150))
                     .lineLimit(5)
                     .foregroundColor(.white)
                     .font(.system(size: 13))
+                
             }
             Button {
-                AskAway()
+                opacity = 0.0
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    AskAway()
+                }
                 let impactMed = UIImpactFeedbackGenerator(style: .medium)
                 impactMed.impactOccurred()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    opacity = 1
+                }
             } label: {
                 Text("Ask Away!")
                     .foregroundColor(.white)
