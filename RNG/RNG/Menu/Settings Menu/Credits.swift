@@ -19,9 +19,9 @@ struct Credits: View {
                 .fontWeight(.medium)
             Text("""
 
-adison green
+Adison Green
 Speedmaster24
-matthew altaniranda
+Matthew Altaniranda
 
 """)
                 .multilineTextAlignment(.center)
