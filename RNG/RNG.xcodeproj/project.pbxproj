@@ -50,6 +50,7 @@
 		8E84E56227BEAA60003DC174 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		8E84E56427BEAE67003DC174 /* Future changes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Future changes.swift"; sourceTree = "<group>"; };
 		8E84E56627BEB032003DC174 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		8E84E56827BEB47E003DC174 /* Academy Engraved LET Fonts.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Academy Engraved LET Fonts.ttf"; sourceTree = "<group>"; };
 		8ED2D048279EF7BC004153F0 /* Custom Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom Colors.swift"; sourceTree = "<group>"; };
 		8EF84B612799C17500A2D859 /* EditList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditList.swift; sourceTree = "<group>"; };
 		8EF84B622799C17500A2D859 /* Lists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lists.swift; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 		8E6F51472784C031000E8BED /* RNG */ = {
 			isa = PBXGroup;
 			children = (
+				8E84E56827BEB47E003DC174 /* Academy Engraved LET Fonts.ttf */,
 				8E6F51482784C031000E8BED /* RNGApp.swift */,
 				8ED2D048279EF7BC004153F0 /* Custom Colors.swift */,
 				8E84E55C27BEA171003DC174 /* Menu */,
