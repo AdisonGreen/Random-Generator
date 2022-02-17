@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Dice: Identifiable {
+struct Dice: Identifiable, Equatable {
     var id: UUID = UUID()
     var name: String
     var image1: Image {

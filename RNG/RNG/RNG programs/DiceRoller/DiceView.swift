@@ -31,13 +31,27 @@ struct DiceView: View {
             
             LazyVGrid(columns: [GridItem(.adaptive(minimum: gridItemSize, maximum: gridItemSize))]) {
                 ForEach(viewModel.diceArray) { dice in
-                    dice.image1
-                        .resizable()
-                        .scaledToFit()
-                        .padding()
+                    Button {
+                        if let indexOfDice = viewModel.diceArray.firstIndex(of: dice) {
+                            deleteDice(at: indexOfDice)
+                        }
+                    } label: {
+                        dice.image1
+                            .resizable()
+                            .scaledToFit()
+                            .padding()
+                    }
                 }
             }
         }
+    }
+    
+    func deleteDice(at index: Int) {
+        let dice = viewModel.diceArray[index]
+        let diceName = dice.name
+        
+        viewModel.diceArray.remove(at: index)
+//        viewModel.reRollAllDice()
     }
 }
 

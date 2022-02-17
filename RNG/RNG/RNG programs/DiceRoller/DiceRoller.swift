@@ -13,14 +13,14 @@ struct DiceRoller: View {
     var body: some View {
         VStack {
             ScrollView {
-                ForEach(viewModel.diceArray) { dice in
-                    Button(action: { self.deleteDice(at: self.viewModel.diceArray.firstIndex(where: {
-                        $0.id == dice.id })!)
-                        
-                    }, label: {
-                        DiceView(viewModel: viewModel)
-                    })
-                }
+//                ForEach(viewModel.diceArray.indices) { dice in
+//                    Button {
+//                        deleteDice(at: 0)
+//                    } label: {
+//                        DiceView(viewModel: viewModel)
+//                    }
+//                }
+                DiceView(viewModel: viewModel)
             }
             
             Text("Total: \(viewModel.total)")
@@ -53,12 +53,6 @@ struct DiceRoller: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Dice Roller")
-    }
-    
-    func deleteDice(at index: Int) {
-//        let dice = viewModel.diceArray[index]
-//        let diceName = dice.name
-        viewModel.diceArray.remove(at: index)
     }
 }
 
