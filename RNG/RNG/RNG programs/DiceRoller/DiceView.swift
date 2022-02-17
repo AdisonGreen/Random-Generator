@@ -48,10 +48,12 @@ struct DiceView: View {
     
     func deleteDice(at index: Int) {
         let dice = viewModel.diceArray[index]
-        let diceName = dice.name
-        
-        viewModel.diceArray.remove(at: index)
-//        viewModel.reRollAllDice()
+        let nameOfDice = dice.name
+
+        if let diceIndex = dice.type.diceOptionNames.firstIndex(of: nameOfDice) {
+            viewModel.diceArray.remove(at: index)
+            viewModel.total -= diceIndex + 1
+        }
     }
 }
 

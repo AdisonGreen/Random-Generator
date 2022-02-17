@@ -13,13 +13,6 @@ struct DiceRoller: View {
     var body: some View {
         VStack {
             ScrollView {
-//                ForEach(viewModel.diceArray.indices) { dice in
-//                    Button {
-//                        deleteDice(at: 0)
-//                    } label: {
-//                        DiceView(viewModel: viewModel)
-//                    }
-//                }
                 DiceView(viewModel: viewModel)
             }
             
