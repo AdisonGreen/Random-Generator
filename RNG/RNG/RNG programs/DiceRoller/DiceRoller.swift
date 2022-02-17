@@ -9,7 +9,6 @@ import SwiftUI
 
 struct DiceRoller: View {
     @ObservedObject var viewModel = DiceViewModel()
-    @State var total = 0
     
     var body: some View {
         VStack {
@@ -57,6 +56,8 @@ struct DiceRoller: View {
     }
     
     func deleteDice(at index: Int) {
+//        let dice = viewModel.diceArray[index]
+//        let diceName = dice.name
         viewModel.diceArray.remove(at: index)
     }
 }

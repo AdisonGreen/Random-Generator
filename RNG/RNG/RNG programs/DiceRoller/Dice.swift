@@ -14,10 +14,23 @@ struct Dice: Identifiable {
     var image1: Image {
         Image(name)
     }
+    
     var type: DiceType
     
-    mutating func reRoll() {
-        self.name = type.diceOptionNames.shuffled()[0]
+    mutating func reRoll() -> Int {
+        let howMuchInType = type.diceOptions.count
+        let randomIndex = Int.random(in: 0..<howMuchInType)
+        
+        let newDice = type.diceOptions[randomIndex]
+        self.name = newDice.name
+        
+        return randomIndex + 1
+    }
+    
+    func addTheTotal() -> Int {
+        let diceType = type.diceOptions.first
+        
+        return 0
     }
     
     static var all: [Dice] = DiceType.allCases.flatMap { diceType in
