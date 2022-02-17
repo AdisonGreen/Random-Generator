@@ -11,19 +11,28 @@ struct Credits: View {
     var body: some View {
         ScrollView {
             Text("Credits")
-                .font(.custom("Academy Engraved LET Plain", size: 35))
+                .font(.custom("Academy Engraved LET", size: 35))
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
             Text("App Developers")
                 .font(.title3)
                 .fontWeight(.medium)
             Text("""
+
 adison green
 Speedmaster24
 matthew altaniranda
+
 """)
                 .multilineTextAlignment(.center)
-            Text("")
+            Text("Additional help")
+                .font(.title2)
+                .multilineTextAlignment(.center)
+            Text("""
+
+Alan Barth
+SwiftyPlant
+""")
                 .multilineTextAlignment(.center)
         }
     }
