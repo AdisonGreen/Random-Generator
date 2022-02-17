@@ -103,7 +103,7 @@ struct Menu: View {
                 .toolbar {
                     ToolbarItemGroup(placement: .navigationBarTrailing) {
                         NavigationLink(destination: MainPageSettings()) {
-                            Image(systemName: "person.3")
+                            Image(systemName: "gearshape.fill")
                         }
                     }
                 }
