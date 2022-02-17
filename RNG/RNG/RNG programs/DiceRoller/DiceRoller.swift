@@ -9,19 +9,11 @@ import SwiftUI
 
 struct DiceRoller: View {
     @ObservedObject var viewModel = DiceViewModel()
-    @State var total = 0
     
     var body: some View {
         VStack {
             ScrollView {
-                ForEach(viewModel.diceArray) { dice in
-                    Button(action: { self.deleteDice(at: self.viewModel.diceArray.firstIndex(where: {
-                        $0.id == dice.id })!)
-                        
-                    }, label: {
-                        DiceView(viewModel: viewModel)
-                    })
-                }
+                DiceView(viewModel: viewModel)
             }
             
             Text("Total: \(viewModel.total)")
@@ -54,10 +46,6 @@ struct DiceRoller: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Dice Roller")
-    }
-    
-    func deleteDice(at index: Int) {
-        viewModel.diceArray.remove(at: index)
     }
 }
 
