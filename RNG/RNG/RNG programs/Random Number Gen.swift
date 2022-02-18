@@ -25,6 +25,8 @@ struct Random_Number_Gen: View {
     
     @State private var animateNumber = false
     
+    @ObservedObject var hapticViewModel = HapticFeedback()
+    
     var body: some View {
         VStack {
             Spacer()
@@ -59,8 +61,10 @@ struct Random_Number_Gen: View {
             .clipShape(RoundedRectangle(cornerRadius: 10))
             
             Button("Generate") {
-                let impactMed = UIImpactFeedbackGenerator(style: .medium)
-                impactMed.impactOccurred()
+                if hapticViewModel.useHapticFeedback {
+                    let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                    impactMed.impactOccurred()
+                }
                 canNotPressButton = true
                 guard let minnTextField = minTextField else {
                     minTextField = 1

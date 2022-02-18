@@ -7,4 +7,6 @@
 
 import Foundation
 
-var hapticFeedBack = true
+class HapticFeedback: ObservableObject {
+    var useHapticFeedback = true
+}

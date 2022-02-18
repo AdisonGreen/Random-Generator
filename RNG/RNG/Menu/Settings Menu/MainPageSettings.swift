@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainPageSettings: View {
-    @State var hapticFeedBack = true
+    @ObservedObject var hapticViewModel = HapticFeedback()
     
     var body: some View {
         List {
@@ -27,7 +27,7 @@ struct MainPageSettings: View {
                     .foregroundColor(Color.deepBlack)
             }
             .frame(height: 50)
-            Toggle("Haptic Feedback", isOn: $hapticFeedBack)
+            Toggle("Haptic Feedback", isOn: $hapticViewModel.useHapticFeedback)
                 .frame(height: 50)
         }
         .listStyle(.inset)
