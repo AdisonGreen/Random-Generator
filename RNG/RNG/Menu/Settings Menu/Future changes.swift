@@ -31,7 +31,7 @@ struct Future_changes: View {
             Text("""
     
     Character Generator (This means an OC or something)
-    Name Generator
+    Name Generator (names)
     Ad generator (basicly just a screen with a button that plays a random ad)
     Image generator (creates a random picture by randomizing pixels)
     """)

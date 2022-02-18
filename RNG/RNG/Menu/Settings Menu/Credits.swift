@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Credits: View {
+    
+    
     var body: some View {
         ScrollView {
             Text("Credits")
@@ -22,7 +24,7 @@ struct Credits: View {
 
 Adison Green
 Speedmaster24
-Matthew Altaniranda
+Matthew Altamiranda
 
 """)
                 .multilineTextAlignment(.center)
@@ -51,6 +53,13 @@ speedmaster2425@gmail.com
             
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 5.0)
+            Button(action: {
+                if let url = URL(string: "https://www.patreon.com/speedmaster24_and_Co") {
+                   UIApplication.shared.open(url)
+                }
+            }) {
+                Image("PatreonSymbol")
+            }
         }
     }
 }
@@ -60,3 +69,4 @@ struct Credits_Previews: PreviewProvider {
         Credits()
     }
 }
+
