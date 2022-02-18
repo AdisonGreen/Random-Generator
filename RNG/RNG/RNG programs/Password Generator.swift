@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import MobileCoreServices
 
 struct Password_Generator: View {
     @State var SliderValue: Double = 4
     @State var passwordString: String = ""
+    @State var opacity = 1.0
     
     @ObservedObject var hapticViewModel = HapticFeedback()
     
@@ -88,15 +90,16 @@ struct Password_Generator: View {
             }
             .padding(.horizontal)
             Spacer()
-            Button(action: {
-                UIPasteboard.general.string = self.passwordString
-            }) {
-                Text(passwordString)
-                Image(systemName: "doc.on.doc")
-            }
-//            Text(passwordString)
-//                .multilineTextAlignment(.center)
-//                .padding(.horizontal)
+            Text(self.passwordString)
+                .opacity(opacity)
+                .onTapGesture(count: 1) {
+                    UIPasteboard.general.setValue(self.passwordString, forPasteboardType: kUTTypePlainText as String)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.11) {
+                        opacity = 1.0
+                    }
+                    opacity = 0.5
+                }
+           
             Spacer()
             
             VStack {
