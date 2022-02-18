@@ -77,6 +77,13 @@ struct Card_Picker: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Cards")
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                NavigationLink(destination: MainPageSettings()) {
+                    Image(systemName: "gearshape.fill")
+                }
+            }
+        }
     }
 }
 

@@ -118,6 +118,13 @@ struct Password_Generator: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Password generator")
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                NavigationLink(destination: MainPageSettings()) {
+                    Image(systemName: "gearshape.fill")
+                }
+            }
+        }
     }
 }
 

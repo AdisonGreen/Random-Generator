@@ -17,6 +17,7 @@ struct Credits: View {
             Text("App Developers")
                 .font(.title3)
                 .fontWeight(.medium)
+                .multilineTextAlignment(.center)
             Text("""
 
 Adison Green
@@ -26,14 +27,30 @@ Matthew Altaniranda
 """)
                 .multilineTextAlignment(.center)
             Text("Additional help")
-                .font(.title2)
+                .font(.title3)
+                .fontWeight(.medium)
                 .multilineTextAlignment(.center)
             Text("""
 
 Alan Barth
 SwiftyPlant
+
 """)
                 .multilineTextAlignment(.center)
+            Text("Side note")
+                .font(.title3)
+                .fontWeight(.medium)
+                .multilineTextAlignment(.center)
+            Text("""
+
+This App was a project made for a college class.
+It is the culmination of 6 weeks of work however we the aformentioned app devs do plan to keep working on it even afterwards and turn this into a great app that wont ever have in app purchases or annoying ads that appear every few seconds however to do that we could use your support so feel free to donate to our patreon
+if you have any ideas message speedmaster24 at his email of
+speedmaster2425@gmail.com
+""")
+            
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 5.0)
         }
     }
 }

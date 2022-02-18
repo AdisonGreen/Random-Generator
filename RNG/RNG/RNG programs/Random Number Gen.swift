@@ -112,6 +112,13 @@ struct Random_Number_Gen: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Random Number Generator")
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                NavigationLink(destination: MainPageSettings()) {
+                    Image(systemName: "gearshape.fill")
+                }
+            }
+        }
     }
     
     func animate(howLongToWait: DispatchTime) {

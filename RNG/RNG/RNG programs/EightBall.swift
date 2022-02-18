@@ -110,6 +110,13 @@ struct EightBall: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Magic 8 Ball")
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                NavigationLink(destination: MainPageSettings()) {
+                    Image(systemName: "gearshape.fill")
+                }
+            }
+        }
     }
 }
 

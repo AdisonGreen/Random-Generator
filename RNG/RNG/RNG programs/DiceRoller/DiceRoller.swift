@@ -46,6 +46,13 @@ struct DiceRoller: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Dice Roller")
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                NavigationLink(destination: MainPageSettings()) {
+                    Image(systemName: "gearshape.fill")
+                }
+            }
+        }
     }
 }
 
