@@ -88,9 +88,15 @@ struct Password_Generator: View {
             }
             .padding(.horizontal)
             Spacer()
-            Text(passwordString)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal)
+            Button(action: {
+                UIPasteboard.general.string = self.passwordString
+            }) {
+                Text(passwordString)
+                Image(systemName: "doc.on.doc")
+            }
+//            Text(passwordString)
+//                .multilineTextAlignment(.center)
+//                .padding(.horizontal)
             Spacer()
             
             VStack {
