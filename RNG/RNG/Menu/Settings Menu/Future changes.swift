@@ -10,34 +10,46 @@ import SwiftUI
 struct Future_changes: View {
     var body: some View {
         ScrollView {
-            Text("Future Changes")
+            Text(/*"Future*/"Changes")
                 .font(.custom("Academy Engraved LET", size: 35))
-            Text("Things to Fix")
+            Text("Updates Coming Soon")
                 .font(.title3)
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
-            Text("""
-    
-    Making the Dice images to be fully 3D looking and getting rid of placeholder images
-    fixing the UI problems with 8ball
-    
-    """)
+                .padding(.bottom)
+            Text("- Getting Rid of Placeholder Dice and Adding 3D Dice")
                 .multilineTextAlignment(.center)
-                .padding(.horizontal, 5.0)
+//                .padding(.horizontal, 5.0)
+            Text("- Fixing UI for 8 Ball")
+//                .multilineTextAlignment(.center)
+                .padding(.leading, -170)
+                .padding(.top, 2)
             Text("Future Additions")
                 .font(.title3)
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
-            Text("""
-    
-    Character Generator (This means an OC or something)
-    Name Generator
-    Ad generator (basicly just a screen with a button that plays a random ad)
-    Image generator (creates a random picture by randomizing pixels)
-    """)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 5.0)
+                .padding()
+            Text("- Character Generator")
+                .padding(EdgeInsets(top: 2, leading: -160, bottom: 10, trailing: 0))
+
+            Text("- Name Generator")
+                .padding(EdgeInsets(top: 2, leading: -165, bottom: 10, trailing: 0))
+            Text("- Ad Generator")
+                .padding(EdgeInsets(top: 2, leading: -165, bottom: 10, trailing: 0))
+            Text("- Random Image Generator")
+                .padding(EdgeInsets(top: 2, leading: -120, bottom: 10, trailing: 0))
+
+//            Text("""
+//
+//    Character Generator (This means an OC or something)
+//    Name Generator
+//    Ad generator (basicly just a screen with a button that plays a random ad)
+//    Image generator (creates a random picture by randomizing pixels)
+//    """)
+//                .multilineTextAlignment(.center)
+//                .padding(.horizontal, 5.0)
         }
+        .padding(.top, -50)
     }
 }
 
