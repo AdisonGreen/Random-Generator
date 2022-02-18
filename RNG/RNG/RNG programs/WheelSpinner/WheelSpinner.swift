@@ -83,6 +83,13 @@ struct WheelSpinner: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Wheel Spinner")
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                NavigationLink(destination: MainPageSettings()) {
+                    Image(systemName: "gearshape.fill")
+                }
+            }
+        }
     }
     
     func delayAlert() {

@@ -198,10 +198,10 @@
 		C91AC33D27AD75AF00C34EC2 /* DiceRoller */ = {
 			isa = PBXGroup;
 			children = (
-				C957EA622788969600676339 /* DiceRoller.swift */,
-				C9649EA427B5797D005ACE8A /* DiceViewModel.swift */,
-				C90B2FC427B2BF6B0071CE13 /* DiceView.swift */,
 				C9649EA227B571E3005ACE8A /* Dice.swift */,
+				C957EA622788969600676339 /* DiceRoller.swift */,
+				C90B2FC427B2BF6B0071CE13 /* DiceView.swift */,
+				C9649EA427B5797D005ACE8A /* DiceViewModel.swift */,
 			);
 			path = DiceRoller;
 			sourceTree = "<group>";
