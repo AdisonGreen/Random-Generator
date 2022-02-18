@@ -30,14 +30,9 @@ struct Future_changes: View {
                 .multilineTextAlignment(.center)
                 .padding()
             Text("- Character Generator")
-                .padding(EdgeInsets(top: 2, leading: -160, bottom: 10, trailing: 0))
-
             Text("- Name Generator")
-                .padding(EdgeInsets(top: 2, leading: -165, bottom: 10, trailing: 0))
             Text("- Ad Generator")
-                .padding(EdgeInsets(top: 2, leading: -165, bottom: 10, trailing: 0))
             Text("- Random Image Generator")
-                .padding(EdgeInsets(top: 2, leading: -120, bottom: 10, trailing: 0))
 
 //            Text("""
 //
