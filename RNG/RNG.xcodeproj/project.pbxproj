@@ -15,7 +15,6 @@
 		8E6F51592784C0C3000E8BED /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6F51582784C0C3000E8BED /* Menu.swift */; };
 		8E84E56327BEAA60003DC174 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84E56227BEAA60003DC174 /* Credits.swift */; };
 		8E84E56527BEAE67003DC174 /* Future changes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84E56427BEAE67003DC174 /* Future changes.swift */; };
-		8E84E56727BEB032003DC174 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E84E56627BEB032003DC174 /* Storyboard.storyboard */; };
 		8E84E56A27BEB77F003DC174 /* Academy Engraved LET Fonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E84E56927BEB77F003DC174 /* Academy Engraved LET Fonts.ttf */; };
 		8ED2D049279EF7BC004153F0 /* Custom Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2D048279EF7BC004153F0 /* Custom Colors.swift */; };
 		8EF84B652799C17500A2D859 /* EditList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF84B612799C17500A2D859 /* EditList.swift */; };
@@ -51,7 +50,6 @@
 		8E6F51582784C0C3000E8BED /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		8E84E56227BEAA60003DC174 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		8E84E56427BEAE67003DC174 /* Future changes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Future changes.swift"; sourceTree = "<group>"; };
-		8E84E56627BEB032003DC174 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		8E84E56927BEB77F003DC174 /* Academy Engraved LET Fonts.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Academy Engraved LET Fonts.ttf"; sourceTree = "<group>"; };
 		8E84E56B27BEB9BC003DC174 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8ED2D048279EF7BC004153F0 /* Custom Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom Colors.swift"; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 				C909C2FA27BD51A500A6414D /* MainPageSettings.swift */,
 				8E84E56227BEAA60003DC174 /* Credits.swift */,
 				8E84E56427BEAE67003DC174 /* Future changes.swift */,
-				8E84E56627BEB032003DC174 /* Storyboard.storyboard */,
 				B399C75F27BF495500F7122D /* HapticFeedBack.swift */,
 			);
 			path = "Settings Menu";
@@ -274,7 +271,6 @@
 				8E6F51502784C033000E8BED /* Preview Assets.xcassets in Resources */,
 				8E84E56A27BEB77F003DC174 /* Academy Engraved LET Fonts.ttf in Resources */,
 				8E6F514D2784C033000E8BED /* Assets.xcassets in Resources */,
-				8E84E56727BEB032003DC174 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
