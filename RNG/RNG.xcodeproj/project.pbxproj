@@ -31,6 +31,7 @@
 		B3921CBD27AC263D00DA1CB8 /* Wheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3921CBC27AC263D00DA1CB8 /* Wheel.swift */; };
 		B399C75C27B2CB5000F7122D /* SliceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399C75B27B2CB5000F7122D /* SliceView.swift */; };
 		B399C75E27B41A4200F7122D /* WheelArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399C75D27B41A4200F7122D /* WheelArrow.swift */; };
+		B399C76027BF495500F7122D /* HapticFeedBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399C75F27BF495500F7122D /* HapticFeedBack.swift */; };
 		B3D135BA2788891600C6264D /* Random Number Gen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D135B92788891600C6264D /* Random Number Gen.swift */; };
 		C909C2FB27BD51A500A6414D /* MainPageSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909C2FA27BD51A500A6414D /* MainPageSettings.swift */; };
 		C90B2FC527B2BF6B0071CE13 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90B2FC427B2BF6B0071CE13 /* DiceView.swift */; };
@@ -67,6 +68,7 @@
 		B3921CBC27AC263D00DA1CB8 /* Wheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wheel.swift; sourceTree = "<group>"; };
 		B399C75B27B2CB5000F7122D /* SliceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceView.swift; sourceTree = "<group>"; };
 		B399C75D27B41A4200F7122D /* WheelArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelArrow.swift; sourceTree = "<group>"; };
+		B399C75F27BF495500F7122D /* HapticFeedBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedBack.swift; sourceTree = "<group>"; };
 		B3D135B92788891600C6264D /* Random Number Gen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Random Number Gen.swift"; sourceTree = "<group>"; };
 		C909C2FA27BD51A500A6414D /* MainPageSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageSettings.swift; sourceTree = "<group>"; };
 		C90B2FC427B2BF6B0071CE13 /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				8E84E56227BEAA60003DC174 /* Credits.swift */,
 				8E84E56427BEAE67003DC174 /* Future changes.swift */,
 				8E84E56627BEB032003DC174 /* Storyboard.storyboard */,
+				B399C75F27BF495500F7122D /* HapticFeedBack.swift */,
 			);
 			path = "Settings Menu";
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				B33D3A5B27A1B58900FE0393 /* WheelSpinner.swift in Sources */,
 				8EF84B672799C17500A2D859 /* UserList.swift in Sources */,
 				8E6F51592784C0C3000E8BED /* Menu.swift in Sources */,
+				B399C76027BF495500F7122D /* HapticFeedBack.swift in Sources */,
 				B3D135BA2788891600C6264D /* Random Number Gen.swift in Sources */,
 				C90B2FC527B2BF6B0071CE13 /* DiceView.swift in Sources */,
 				8EF84B652799C17500A2D859 /* EditList.swift in Sources */,

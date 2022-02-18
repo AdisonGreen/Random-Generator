@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainPageSettings: View {
+    @ObservedObject var hapticViewModel = HapticFeedback()
+    
     var body: some View {
         List {
             NavigationLink(destination: Credits()) {
@@ -25,8 +27,11 @@ struct MainPageSettings: View {
                     .foregroundColor(Color.deepBlack)
             }
             .frame(height: 50)
+            Toggle("Haptic Feedback", isOn: $hapticViewModel.useHapticFeedback)
+                .frame(height: 50)
         }
         .listStyle(.inset)
+        .navigationTitle("Settings")
     }
 }
 

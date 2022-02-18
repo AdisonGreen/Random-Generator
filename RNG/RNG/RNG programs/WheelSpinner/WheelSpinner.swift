@@ -20,6 +20,8 @@ struct WheelSpinner: View {
     
     @State private var disabled = false
     
+    @ObservedObject var hapticViewModel = HapticFeedback()
+    
     var body: some View {
         VStack {
             Spacer()
@@ -36,8 +38,11 @@ struct WheelSpinner: View {
             }
             Spacer()
             Button("Spin") {
-                let impactMed = UIImpactFeedbackGenerator(style: .medium)
-                impactMed.impactOccurred()
+                if hapticViewModel.useHapticFeedback {
+                    let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                    impactMed.impactOccurred()
+                }
+                
                 disabled = true
                 
                 let sliceDegrees = 360.0 / Double(userSelection.listItems.count)

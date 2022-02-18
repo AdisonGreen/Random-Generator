@@ -9,6 +9,7 @@ import SwiftUI
 struct Card_Picker: View {
     @ObservedObject var viewModel = CardViewModel()
     @State var includeJokers = false
+    @ObservedObject var hapticViewModel = HapticFeedback()
     
     var body: some View {
         VStack {
@@ -17,8 +18,11 @@ struct Card_Picker: View {
             Button(action: {
                 viewModel.newCard()
                 viewModel.shuffle()
-                let impactMed = UIImpactFeedbackGenerator(style: .medium)
-                impactMed.impactOccurred()
+                
+                if hapticViewModel.useHapticFeedback {
+                    let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                    impactMed.impactOccurred()
+                }
             }) {
                 if viewModel.numberVisible == 0 {
                     Text("Pick A Card")

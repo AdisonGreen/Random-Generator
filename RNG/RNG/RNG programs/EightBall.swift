@@ -36,6 +36,7 @@ enum EightBallAnswers: CaseIterable {
 struct EightBall: View {
     @State var EightBallAnswer: String = "Welcome!"
     @State var opacity = 1.0
+    @ObservedObject var hapticViewModel = HapticFeedback()
     
     func AskAway() {
         let randomEightBallAnswer = EightBallAnswers.allCases.randomElement()!
@@ -91,8 +92,11 @@ struct EightBall: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                     AskAway()
                 }
-                let impactMed = UIImpactFeedbackGenerator(style: .medium)
-                impactMed.impactOccurred()
+                if hapticViewModel.useHapticFeedback {
+                    let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                    impactMed.impactOccurred()
+                }
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     opacity = 1
                 }

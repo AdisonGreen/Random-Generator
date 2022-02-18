@@ -10,6 +10,8 @@ import SwiftUI
 struct DiceRoller: View {
     @ObservedObject var viewModel = DiceViewModel()
     
+    @ObservedObject var hapticViewModel = HapticFeedback()
+    
     var body: some View {
         VStack {
             ScrollView {
@@ -29,8 +31,11 @@ struct DiceRoller: View {
             
             Button(action: {
                 viewModel.reRollAllDice()
-                let impactMed = UIImpactFeedbackGenerator(style: .medium)
-                impactMed.impactOccurred()
+                
+                if hapticViewModel.useHapticFeedback {
+                    let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                    impactMed.impactOccurred()
+                }
             }) {
                 Text("Roll Dice")
                     .foregroundColor(.white)
